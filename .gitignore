@@ -1,0 +1,7 @@
+models/
+ollama-data/
+vllm-cache/
+*.gguf
+*.env
+*.iso
+serial.log

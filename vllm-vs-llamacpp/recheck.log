@@ -1,0 +1,12 @@
+=== recheck start 2026-11-09 06:59:53; desktop VRAM 1754 MiB
+llama defaults (recheck): ready in 2.461312415 s; VRAM /app/llama-server, 13920 MiB; args: 
+{"label": "llama-def-k1-short-recheck", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 118.3, "tg_tps_med": 121.0, "ttft_ms_med": 104, "ttft_ms_max": 110, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+vllm mem0.6 seqs32 same-day: ready in 64.089711427 s; GPU KV cache size: 110,176 tokens Maximum concurrency for 32,768 tokens per request: 3.36x ; VRAM VLLM::EngineCore, 13014 MiB
+{"label": "vllm-m06-k1-short", "engine": "vllm", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 113.0, "tg_tps_med": 114.2, "ttft_ms_med": 54, "ttft_ms_max": 56, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "vllm-m06-k1-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 78.5, "tg_tps_med": 111.7, "ttft_ms_med": 975, "ttft_ms_max": 982, "gen_tokens_med": 256, "prompt_tokens_med": 4122}
+{"label": "vllm-m06-k4-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 399.4, "tg_tps_med": 104.2, "ttft_ms_med": 121, "ttft_ms_max": 125, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "vllm-m06-k8-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 768.9, "tg_tps_med": 103.5, "ttft_ms_med": 197, "ttft_ms_max": 206, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+{"label": "vllm-m06-k16-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 1283.4, "tg_tps_med": 89.1, "ttft_ms_med": 325, "ttft_ms_max": 352, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "vllm-m06-k32-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 1729.8, "tg_tps_med": 61.1, "ttft_ms_med": 554, "ttft_ms_max": 630, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "vllm-m06-k8-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 191.6, "tg_tps_med": 45.4, "ttft_ms_med": 4963, "ttft_ms_max": 7897, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.5}
+=== recheck done 2026-11-09 07:14:58

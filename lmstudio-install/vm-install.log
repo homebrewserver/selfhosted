@@ -1,0 +1,40 @@
+Warning: Permanently added '[127.0.0.1]:2223' (ED25519) to the list of known hosts.
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+NAME="Ubuntu"
+7.0.0-38-generic
+.
+..
+.bash_logout
+.bashrc
+.cache
+.profile
+.ssh
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/_vendor/wheel/vendored/packaging/__pycache__/_structures.cpython-311.pyc: Cannot write: Disk quota exceeded
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/_vendor/wheel/vendored/packaging/__pycache__/_tokenizer.cpython-311.pyc: Cannot write: Disk quota exceeded
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/_vendor/wheel/vendored/packaging/__pycache__/markers.cpython-311.pyc: Cannot write: Disk quota exceeded
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/_vendor/wheel/vendored/packaging/__pycache__/requirements.cpython-311.pyc: Cannot write: Disk quota exceeded
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/_vendor/wheel/vendored/packaging/__pycache__/specifiers.cpython-311.pyc: Cannot write: Disk quota exceeded
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/_vendor/wheel/vendored/packaging/__pycache__/tags.cpython-311.pyc: Cannot write: Disk quota exceeded
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/_vendor/wheel/vendored/packaging/__pycache__/utils.cpython-311.pyc: Cannot write: Disk quota exceeded
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/_vendor/wheel/vendored/packaging/__pycache__/version.cpython-311.pyc: Cannot write: Disk quota exceeded
+tar: .bundle/bin/extensions/backends/vendor/_amphibian/cpython3.11-linux-x86@3/lib/python3.11/site-packages/setuptools/tests/indexes/test_links_priority/simple/foobar/index.html: Cannot write: Disk quota exceeded
+tar: Exiting with failure status due to previous errors
+ERROR: command failed: tar xf /tmp/tmp.pdh5ssjh55/input.tar.gz -C /tmp/tmp.pdh5ssjh55
+
+real	5m28.126s
+user	0m13.747s
+sys	0m9.244s
+---
+    . /etc/bash_completion
+  fi
+fi
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+.
+..
+.bash_logout
+.bashrc
+.cache
+.profile
+.ssh

@@ -1,0 +1,97 @@
+### 2026-11-09 07:49:16 host daemon/runtime
+Starting local model service...
+{"status":"running","pid":3928693,"isDaemon":true,"version":"0.0.27+1"}
+
+real	0m3.322s
+user	0m0.284s
+sys	0m0.127s
+LLM ENGINE                                          SELECTED    MODEL FORMAT
+llama.cpp-linux-x86_64-avx2@2.66.0                                  GGUF    
+llama.cpp-linux-x86_64-nvidia-cuda12-avx2@2.66.0       ✓            GGUF    
+llama.cpp-linux-x86_64-vulkan-avx2@2.66.0                           GGUF    
+Survey by llama.cpp-linux-x86_64-nvidia-cuda12-avx2 (2.66.0)
+GPU/ACCELERATORS                           VRAM     
+NVIDIA GeForce RTX 3090 (CUDA, Discrete)   23.61 GiB
+
+CPU: x86_64 (AVX2, AVX)
+RAM: 62.72 GiB
+### 2026-11-09 07:49:45 import/load/serve
+Hard link created at /home/user/homelab-tests/lmstudio-install/home/.lmstudio/models/unsloth/Qwen3.5-9B-GGUF/Qwen3.5-9B-Q4_K_M.gguf
+
+You have 1 models, taking up 84.11 MB of disk space.
+
+EMBEDDING                               PARAMS    ARCH          SIZE        DEVICE    
+text-embedding-nomic-embed-text-v1.5              Nomic BERT    84.11 MB    Local     
+[K[?25hModel loaded successfully in 2.53s.
+(5.29 GiB)
+To use the model in the API/SDK, use the identifier "qwen3.5-9b".
+
+real	0m2.760s
+user	0m0.403s
+sys	0m0.175s
+
+IDENTIFIER    MODEL         STATUS    SIZE       CONTEXT    PARALLEL    LOAD CONFIG    DEVICE    TTL
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    8192       4           LM Studio      Local        
+
+/home/user/homelab-tests/lmstudio-install/home/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.66.0/llama-server, 5730 MiB
+Success! Server is now running on port 1234
+{"running":true,"port":1234}
+LISTEN 0      511        127.0.0.1:1234       0.0.0.0:*   
+tokens 512 stats {}
+tokens 512 stats {}
+tokens 512 stats {}
+{'tokens_per_second': 113.17095036800492, 'time_to_first_token': 0.046816, 'generation_time': 4.5621089999999995, 'stop_reason': 'maxPredictedTokensReached'} 512
+{'tokens_per_second': 112.72288413521365, 'time_to_first_token': 0.045779, 'generation_time': 4.579020000000001, 'stop_reason': 'maxPredictedTokensReached'} 512
+{'tokens_per_second': 112.53513694931557, 'time_to_first_token': 0.045533000000000004, 'generation_time': 4.586337, 'stop_reason': 'maxPredictedTokensReached'} 512
+### 2026-11-09 07:51:00 plugin probe
+Starting local model service...
+backends
+frameworks
+models
+plugins
+lmstudio
+bundled-plugin-js-code-sandbox.tar.gz
+bundled-plugin-rag-v1.tar.gz
+bundled-plugins.json
+⠦ [████████▎             ] 37.17% | 1.22 KB / 3.28 KB | 1.38 KB/s | ETA 00:01          [u[?25l[s
+⠧ [████████▎             ] 37.17% | 1.22 KB / 3.28 KB | 1.38 KB/s | ETA 00:01          [u[?25l[s
+⠧ [█████████████▊        ] 62.25% | 2.04 KB / 3.28 KB | 1.47 KB/s | ETA 00:01          [u[?25l[s
+⠇ [█████████████▊        ] 62.25% | 2.04 KB / 3.28 KB | 1.47 KB/s | ETA 00:01          [u[?25l[s
+⠏ [█████████████▊        ] 62.25% | 2.04 KB / 3.28 KB | 1.47 KB/s | ETA 00:01          [u[2K[1G[?25hFinalizing download...
+Download completed.
+/home/user/homelab-tests/lmstudio-install/home/.lmstudio/extensions/plugins:
+lmstudio
+
+/home/user/homelab-tests/lmstudio-install/home/.lmstudio/extensions/plugins/lmstudio:
+dice
+js-code-sandbox
+rag-v1
+
+/home/user/homelab-tests/lmstudio-install/home/.lmstudio/extensions/plugins/lmstudio/dice:
+install-state.json
+{"by":"node-plugin-installer-v1","at":1794192669188}
+--- integrations=["lmstudio/dice"]
+{
+  "error": {
+    "message": "Permission denied to use plugin 'lmstudio/dice'. Ensure that the server configuration allows plugin usage and, if using an API token, it has the necessary permissions.",
+    "type": "invalid_request",
+    "param": "integrations",
+    "code": null
+  }
+}
+--- integrations=[{"type":"plugin","id":"lmstudio/dice"}]
+{
+  "error": {
+    "message": "Permission denied to use plugin 'lmstudio/dice'. Ensure that the server configuration allows plugin usage and, if using an API token, it has the necessary permissions.",
+    "type": "invalid_request",
+    "param": "integrations",
+    "code": null
+  }
+}
+Shutting down llmster...
+Done.
+Starting local model service...
+The server is running on port 1234.
+2
+Shutting down llmster...
+Done.

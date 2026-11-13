@@ -1,0 +1,49 @@
+==> Pulling Docker image: ghcr.io/openclaw/openclaw:2026.10.10
+2026.10.10: Pulling from openclaw/openclaw
+Digest: sha256:1e5ee6c7d02d5b5f64f9cf26a30c7ef7d4ec292f0d25fa590f4b7e103e8bf799
+Status: Image is up to date for ghcr.io/openclaw/openclaw:2026.10.10
+ghcr.io/openclaw/openclaw:2026.10.10
+
+==> Fixing data-directory permissions
+ Network oc_default Creating 
+ Network oc_default Creating 
+ Network oc_default Created 
+ Network oc_default Created 
+ Container oc-openclaw-gateway-run-3ae9c59dc0cd Creating 
+ Container oc-openclaw-gateway-run-3ae9c59dc0cd Created 
+
+==> Skipping onboarding (OPENCLAW_SKIP_ONBOARDING is set)
+
+==> Docker gateway defaults
+ Container oc-openclaw-gateway-run-cb9617e70f7c Creating 
+ Container oc-openclaw-gateway-run-cb9617e70f7c Created 
+Pinned gateway.mode=local and gateway.bind=lan for Docker setup.
+Set gateway.controlUi.allowedOrigins to ["http://localhost:18789","http://127.0.0.1:18789"] for non-loopback bind.
+
+==> Provider setup (optional)
+WhatsApp (QR):
+  docker compose -f /home/user/homelab-tests/openclaw-lifecycle/docker/oc/docker-compose.yml run --rm openclaw-cli channels login
+Telegram (bot token):
+  docker compose -f /home/user/homelab-tests/openclaw-lifecycle/docker/oc/docker-compose.yml run --rm openclaw-cli channels add --channel telegram --token <token>
+Discord (bot token):
+  docker compose -f /home/user/homelab-tests/openclaw-lifecycle/docker/oc/docker-compose.yml run --rm openclaw-cli channels add --channel discord --token <token>
+Docs: https://docs.openclaw.ai/channels
+
+==> Starting gateway
+ Container oc-openclaw-gateway-1 Creating 
+ Container oc-openclaw-gateway-1 Created 
+ Container oc-openclaw-gateway-1 Starting 
+ Container oc-openclaw-gateway-1 Started 
+ Container oc-openclaw-gateway-1 Running 
+ Container oc-openclaw-cli-run-a803065724f1 Creating 
+ Container oc-openclaw-cli-run-a803065724f1 Created 
+
+Gateway running with host port mapping.
+Access from tailnet devices via the host's tailnet IP.
+Config: /home/user/homelab-tests/openclaw-lifecycle/docker/data
+Workspace: /home/user/homelab-tests/openclaw-lifecycle/docker/data/workspace
+Token: stored in Docker environment/config (not printed).
+
+Commands:
+  docker compose -f /home/user/homelab-tests/openclaw-lifecycle/docker/oc/docker-compose.yml logs -f openclaw-gateway
+  docker compose -f /home/user/homelab-tests/openclaw-lifecycle/docker/oc/docker-compose.yml exec openclaw-gateway sh -lc 'node dist/index.js gateway health --token "$OPENCLAW_GATEWAY_TOKEN"'

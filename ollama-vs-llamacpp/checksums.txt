@@ -1,0 +1,2 @@
+03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8  models/Qwen3.5-9B-Q4_K_M.gguf
+84b5f7f112156d63836a01a69dc3f11a6ba63b10a23b8ca7a7efaf52d5a2d806  models/Qwen3.5-27B-Q4_K_M.gguf

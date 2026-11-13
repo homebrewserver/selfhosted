@@ -1,0 +1,251 @@
+### 2026-11-09 07:19:16 versions
+3.4G	/home/tester/.lmstudio
+bin
+llmster
+Docs: https://lmstudio.ai/docs/developer
+Join our Discord: https://discord.gg/lmstudio
+Contribute: https://github.com/lmstudio-ai/lms
+Starting local model service...
+{"status":"running","pid":2077,"isDaemon":true,"version":"0.0.27+1"}
+
+real	0m4.245s
+user	0m0.265s
+sys	0m0.057s
+{"status":"running","pid":2077,"isDaemon":true}
+No runtime survey results
+No runtimes found.
+LLM ENGINE                                        SELECTED    MODEL FORMAT
+llama.cpp-linux-x86_64-avx2@2.66.0                   ✓            GGUF    
+llama.cpp-linux-x86_64-nvidia-cuda-avx2@2.66.0                    GGUF    
+llama.cpp-linux-x86_64-vulkan-avx2@2.66.0                         GGUF    
+Survey by llama.cpp-linux-x86_64-avx2 (2.66.0)
+No GPUs detected
+
+CPU: x86_64 (AVX2, AVX)
+RAM: 7.75 GiB
+bin
+config-presets
+conversations
+credentials
+dev-logs
+extensions
+hub
+llmster
+mcp.json
+models
+projects
+scratchpads
+server-logs
+settings.json
+skills
+user-files
+working-directories
+workspace
+2.6G	/home/tester/.lmstudio/extensions
+
+EMBEDDING                               PARAMS    ARCH          SIZE        DEVICE    
+text-embedding-nomic-embed-text-v1.5              Nomic BERT    84.11 MB    Local     
+
+### 2026-11-09 07:19:59 lms get
+[0K
+⠙ Resolving download plan... (1.02 GB)[0K
+[0K
+   ↓ To download: Qwen3.5 0.8B Q8_0 [GGUF] - 1.02 GB[0K
+[0K
+Resolution completed. Downloading 1.02 GB...[0K
+[?25h[?25l[s[2K
+Download completed.
+
+real	4m19.955s
+user	0m5.434s
+sys	0m2.033s
+qwen3.5-0.8b    0.8B      qwen35    1.02 GB    Local     
+
+EMBEDDING                               PARAMS    ARCH          SIZE        DEVICE    
+text-embedding-nomic-embed-text-v1.5              Nomic BERT    84.11 MB    Local     
+
+### 2026-11-09 07:24:27 official system unit
+Shutting down llmster...
+Done.
+Created symlink '/etc/systemd/system/multi-user.target.wants/lmstudio.service' → '/etc/systemd/system/lmstudio.service'.
+Job for lmstudio.service failed because the control process exited with error code.
+See "systemctl status lmstudio.service" and "journalctl -xeu lmstudio.service" for details.
+
+real	0m2.692s
+user	0m0.002s
+sys	0m0.006s
+× lmstudio.service - LM Studio Server
+     Loaded: loaded (/etc/systemd/system/lmstudio.service; enabled; preset: enabled)
+     Active: failed (Result: exit-code) since Mon 2026-11-09 02:24:31 UTC; 8ms ago
+ Invocation: ce60010ef2a745f3bb7d7f5bab63a530
+    Process: 3478 ExecStartPre=/home/tester/.lmstudio/bin/lms daemon up (code=exited, status=0/SUCCESS)
+    Process: 3635 ExecStartPre=/home/tester/.lmstudio/bin/lms load qwen3.5-0.8b --yes (code=exited, status=1/FAILURE)
+   Mem peak: 802.1M
+        CPU: 3.669s
+
+Nov 09 02:24:29 lmsvm lms[3478]: Starting local model service...
+Nov 09 02:24:31 lmsvm lms[3478]: llmster started (PID: 3507).
+Nov 09 02:24:31 lmsvm lms[3635]: [208B blob data]
+
+To load a model, run:
+
+    lms load <model path>
+Starting lmstudio.service - LM Studio Server...
+Starting local model service...
+llmster started (PID: 3507).
+^[[?25l^MLoading qwen3.5-0.8b 0% M-bM- M-^K^[[?25l^MLoading qwen3.5-0.8b 0% M-bM- M-^Y^M^[[K^[[?25hError: Engine protocol runtime llama-server for 4vhNipXsr0jbAgDtN+dnnaLb exited before becoming healthy. exitCode=127, signal=null
+lmstudio.service: Control process exited, code=exited, status=1/FAILURE
+lmstudio.service: Failed with result 'exit-code'.
+Failed to start lmstudio.service - LM Studio Server.
+lmstudio.service: Consumed 3.669s CPU time over 2.675s wall clock time, 802.1M memory peak.
+[?25l
+Loading qwen3.5-0.8b 0% ⠋
+[K[?25hError: Engine protocol runtime llama-server for 4oVFdWfefFVMSO53shpKTb2K exited before becoming healthy. exitCode=127, signal=null
+
+/home/tester/.lmstudio/server-logs:
+2026-11
+/home/tester/.lmstudio/server-logs/2026-11/2026-11-09.1.log
+[2026-11-09 02:24:31][ERROR][LMSAuthenticator][Client=lms-cli][Endpoint=loadModel] Error in channel handler: Error: Engine protocol runtime llama-server for 4vhNipXsr0jbAgDtN+dnnaLb exited before becoming healthy. exitCode=127, signal=null
+[2026-11-09 02:24:46][DEBUG] /home/tester/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-avx2-2.66.0/llama-server: error while loading shared libraries: libgomp.so.1: cannot open shared object file: No such file or directory
+[2026-11-09 02:24:46][DEBUG] /home/tester/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-avx2-2.66.0/llama-server: error while loading shared libraries: libgomp.so.1: cannot open shared object file: No such file or directory
+[2026-11-09 02:24:46][DEBUG] /home/tester/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-avx2-2.66.0/llama-server: error while loading shared libraries: libgomp.so.1: cannot open shared object file: No such file or directory
+[2026-11-09 02:24:46][ERROR][LMSAuthenticator][Client=lms-cli][Endpoint=loadModel] Error in channel handler: Error: Engine protocol runtime llama-server for 4oVFdWfefFVMSO53shpKTb2K exited before becoming healthy. exitCode=127, signal=null
+### 2026-11-09 07:24:52 libgomp1 fix + unit
+Shutting down llmster...
+Done.
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+real	0m3.806s
+user	0m0.001s
+sys	0m0.007s
+● lmstudio.service - LM Studio Server
+     Loaded: loaded (/etc/systemd/system/lmstudio.service; enabled; preset: enabled)
+     Active: active (exited) since Mon 2026-11-09 02:25:02 UTC; 5ms ago
+ Invocation: f0a31ba6826c491393b9f4faa853399f
+{
+  "data": [
+    {
+      "id": "qwen3.5-0.8b",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "text-embedding-nomic-embed-text-v1.5",
+      "object": "model",
+      "owned_by": "organization_owner"
+    }
+  ],
+  "object": "list"
+}
+LISTEN 0      511        127.0.0.1:1234       0.0.0.0:*    users:(("llmster",pid=4272,fd=48))    
+IDENTIFIER      MODEL           STATUS    SIZE       CONTEXT    PARALLEL    LOAD CONFIG    DEVICE    TTL
+qwen3.5-0.8b    qwen3.5-0.8b    IDLE      1.02 GB    8192       4           LM Studio      Local        
+
+{"running":true,"port":1234}
+### 2026-11-09 07:25:08 reboot
+ 02:25:49 up 0 min,  1 user,  load average: 0.36, 0.11, 0.04
+active
+1
+Startup finished in 757ms (kernel) + 2.296s (initrd) + 8.273s (userspace) = 11.327s 
+graphical.target reached after 8.197s in userspace.
+5.315s lmstudio.service
+Hint: You are currently not seeing messages from other users and the system.
+      Users in groups 'adm', 'systemd-journal' can see all messages.
+      Pass -q to turn off this notice.
+[    6.422935] lmsvm lms[1093]: Starting local model service...
+[    9.449918] lmsvm lms[1093]: llmster started (PID: 1309).
+[   11.011987] lmsvm lms[1428]: [1011B blob data]
+[   11.011987] lmsvm lms[1428]: (971.97 MiB)
+[   11.012473] lmsvm lms[1428]: To use the model in the API/SDK, use the identifier "qwen3.5-0.8b".
+[   11.244704] lmsvm lms[1489]: Success! Server is now running on port 1234
+qwen3.5-0.8b    qwen3.5-0.8b    IDLE      1.02 GB    8192       4           LM Studio      Local        
+
+### 2026-11-09 07:25:58 stop/restart/bind/update
+
+real	0m0.293s
+user	0m0.002s
+sys	0m0.007s
+1956 bash -c export PATH=$HOME/.lmstudio/bin:$PATH; time sudo systemctl stop lms
+
+real	0m3.781s
+user	0m0.003s
+sys	0m0.005s
+active
+Stopped the server on port 1234.
+W Server will accept connections from the network. Only use this if you know what you are doing!
+Success! Server is now running on port 1234
+LISTEN 0      511          0.0.0.0:1234       0.0.0.0:*   
+Stopped the server on port 1234.
+Success! Server is now running on port 1234
+LISTEN 0      511        127.0.0.1:1234       0.0.0.0:*   
+--- update
+Shutting down llmster...
+Done.
+Starting llmster upgrade using /home/tester/.lmstudio/llmster/0.0.27-1/llmster...
+Checking for updates (channel: stable, current: 0.0.27+1)
+You're on the latest version (0.0.27+1).
+
+real	0m2.074s
+user	0m1.610s
+sys	0m0.313s
+Starting local model service...
+{"status":"running","pid":2312,"isDaemon":true,"version":"0.0.27+1"}
+   ls                List installed LLM engines
+   select            Select installed LLM engines
+   remove            Remove installed runtime extension packs
+   update            Update installed runtime extensions.
+   get               Download or list runtime extensions.
+   survey            Survey hardware available to selected runtime engines
+Usage: lms runtime update [options] [query]
+
+Update installed runtime extensions.
+
+Arguments:
+   query                           Query runtime extensions. Examples: 'llama.cpp',
+                                   'llama.cpp:cuda', 'llama.cpp@1.2.3'
+
+Options:
+   -a, --all                       Update all installed runtime extensions
+   --allow-incompatible            Include runtime extensions that are incompatible with
+                                   your system
+### 2026-11-09 07:26:23 runtime update
+2.6G	/home/tester/.lmstudio/extensions
+Update Plan:
+  llama.cpp-linux-x86_64-avx2    2.66.0 → 2.71.0
+Updating llama.cpp-linux-x86_64-avx2 from 2.66.0 to 2.71.0...
+[?25l[s[2K
+Runtime installed.
+Updated llama.cpp-linux-x86_64-avx2 to version 2.71.0.
+
+real	0m4.399s
+user	0m0.279s
+sys	0m0.082s
+LLM ENGINE                                        SELECTED    MODEL FORMAT
+llama.cpp-linux-x86_64-avx2@2.71.0                   ✓            GGUF    
+llama.cpp-linux-x86_64-avx2@2.66.0                                GGUF    
+llama.cpp-linux-x86_64-nvidia-cuda-avx2@2.66.0                    GGUF    
+llama.cpp-linux-x86_64-vulkan-avx2@2.66.0                         GGUF    
+2.7G	/home/tester/.lmstudio/extensions
+(971.97 MiB)
+To use the model in the API/SDK, use the identifier "qwen3.5-0.8b".
+The server is not running.
+{'role': 'assistant', 'content': '', 'reasoning_content': 'Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: "Say hi in three words."\n    *   Constraint: The response must be exactly three words.\n    *   Language: English (implied by the prompt).\n\n2.  **Determine the Content:**\n    *   I need to say "hi" or something similar, but within a specific constraint of word count.\n    *   Wait, the instruction is "Say hi in three words." This usually means I should output exactly three words that convey the greeting.\n    *   Common greetings: Hello, Hi, Good morning. (Too many).\n    *   Shortest valid greeting: "Hi" or "Hello". But those are two words.\n    *   Three words: "Good morning", "Hello there", "Hi there", etc.\n\n3.  **Check Constraints:**\n    *   The user wants me to say something in three', 'tool_calls': []} {'prompt_tokens': 16, 'completion_tokens': 200, 'total_tokens': 216, 'completion_tokens_details': {'reasoning_tokens': 191}}
+### 2026-11-09 07:26:54 uninstall
+/dev/vda1        28G  6.6G   22G  24% /
+Removed '/etc/systemd/system/multi-user.target.wants/lmstudio.service'.
+Daemon is not running.
+3015 bash -c export PATH=$HOME/.lmstudio/bin:$PATH; df -h / | tail -1; sudo systemctl disable --now lmstudio 2>&1; sudo rm /etc/systemd/system/lmstudio.service; sudo systemctl daemon-reload; lms daemon down 2>&1; pgrep -a -f "llmster|llama-server" || echo "no processes"; find / -xdev \( -iname "*lmstudio*" -o -iname "*lm-studio*" -o -iname "*llmster*" \) -not -path "/proc/*" 2>/dev/null | grep -v "^/home/tester/.lmstudio/" ; du -sh ~/.lmstudio; rm -rf ~/.lmstudio ~/.lmstudio-home-pointer; sed -i "/# Added by LM Studio CLI tool (lms)/,+1d" ~/.bashrc ~/.profile; grep -c lmstudio ~/.bashrc ~/.profile; ls -a ~; ls ~/.cache; df -h / | tail -1
+/home/tester/.lmstudio
+/home/tester/.lmstudio-home-pointer
+4.7G	/home/tester/.lmstudio
+/home/tester/.bashrc:0
+/home/tester/.profile:0
+.
+..
+.bash_logout
+.bashrc
+.cache
+.profile
+.ssh
+motd.legal-displayed
+/dev/vda1        28G  2.0G   27G   7% /

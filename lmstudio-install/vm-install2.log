@@ -1,0 +1,31 @@
+Warning: Permanently added '[127.0.0.1]:2223' (ED25519) to the list of known hosts.
+Install completed at /home/tester/.lmstudio/llmster/0.0.27-1.
+Installation finished successfully! llmster is ready to launch.
+To start the daemon, run:
+
+    [33mlms daemon up[0m
+
+To add lms to your PATH, either restart your shell or run:
+    export PATH="/home/tester/.lmstudio/bin:$PATH"
+
+real	5m35.600s
+user	0m17.596s
+sys	0m17.669s
+---
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/home/tester/.lmstudio/bin"
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/home/tester/.lmstudio/bin"
+.
+..
+.bash_logout
+.bashrc
+.cache
+.lmstudio
+.lmstudio-home-pointer
+.profile
+.ssh
+tmp
+3.4G	/home/tester/.lmstudio

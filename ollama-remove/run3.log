@@ -1,0 +1,80 @@
+2026-11-08T18:12:03+05:00
+=== start on the older image (0.30.10), GPU
+
+$ docker run -d --gpus=all --name ollama-rmtest3 -p 127.0.0.1:11536:11434 -v ollama-rmtest3:/root/.ollama ollama/ollama:latest
+5babebc8f3fc077aee770b2ec12b40ee30dbc9122efd547da51b3dff28601260
+
+$ docker exec ollama-rmtest3 ollama --version
+ollama version is 0.30.10
+
+$ docker exec ollama-rmtest3 ollama pull qwen3:0.6b
+verifying sha256 digest 
+writing manifest 
+success 
+
+$ sh -c docker exec ollama-rmtest3 ollama run qwen3:0.6b 'Reply with one word: ok' --think=false --verbose 2>&1 | grep -E 'eval rate'
+prompt eval rate:     1.28 tokens/s
+eval rate:            0.28 tokens/s
+
+$ docker exec ollama-rmtest3 ollama ps
+NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              
+
+$ docker exec -t ollama-rmtest3 ollama ps
+]11;?\NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              
+=== update to 0.40.15: pull the new tag, recreate with the same volume
+
+$ docker rm -f ollama-rmtest3
+ollama-rmtest3
+
+$ sh -c time docker run -d --gpus=all --name ollama-rmtest3 -p 127.0.0.1:11536:11434 -v ollama-rmtest3:/root/.ollama ollama/ollama:0.40.15
+3a9bfed6182e1a23b8ae94521a7bc92e20038d0ef0b714dab364734e4bc0ac4f
+real	0m0.382s
+user	0m0.012s
+sys	0m0.013s
+
+$ docker exec ollama-rmtest3 ollama --version
+ollama version is 0.40.15
+
+$ docker exec ollama-rmtest3 ollama list
+NAME          ID              SIZE      MODIFIED       
+qwen3:0.6b    7df6b6e09427    522 MB    55 seconds ago    
+
+$ sh -c docker exec ollama-rmtest3 ollama run qwen3:0.6b 'Reply with one word: ok' --think=false --verbose 2>&1 | grep -E 'load duration|eval rate'
+load duration:        24.717115603s
+prompt eval rate:     1.11 tokens/s
+eval rate:            0.27 tokens/s
+
+$ sh -c docker exec ollama-rmtest3 ollama run qwen3:0.6b 'Reply with one word: ok' --think=false --verbose 2>&1 | grep -E 'load duration|eval rate'
+load duration:        1.552962ms
+prompt eval rate:     293.60 tokens/s
+eval rate:            945.63 tokens/s
+
+$ sh -c docker exec ollama-rmtest3 ollama run qwen3:0.6b 'Reply with one word: ok' --think=false --verbose 2>&1 | grep -E 'load duration|eval rate'
+load duration:        1.161428ms
+prompt eval rate:     408.16 tokens/s
+eval rate:            943.84 tokens/s
+
+$ docker exec ollama-rmtest3 ollama ps
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+
+$ docker exec -t ollama-rmtest3 ollama ps
+]11;?\NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+
+$ curl -s http://127.0.0.1:11536/api/ps
+{"models":[{"name":"qwen3:0.6b","model":"qwen3:0.6b","size":4308934328,"digest":"7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435","details":{"parent_model":"","format":"gguf","family":"qwen3","families":["qwen3"],"parameter_size":"751.63M","quantization_level":"Q4_K_M"},"expires_at":"2026-11-08T13:21:17.750442081Z","size_vram":4308934328,"context_length":32768,"runner":"llamacpp"}]}
+
+$ nvidia-smi --query-compute-apps=pid,used_memory --format=csv
+pid, used_gpu_memory [MiB]
+23615, 140 MiB
+29888, 461 MiB
+1198972, 63 MiB
+1467164, 38 MiB
+1934450, 970 MiB
+2021190, 5168 MiB
+2129419, 4424 MiB
+
+$ sh -c docker logs ollama-rmtest3 2>&1 | grep -i -E 'offload|layers|error|warn' | tail -8 | cut -c1-300
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 27 repeating layers to GPU
+load_tensors: offloaded 29/29 layers to GPU
+llama_kv_cache: size = 3584.00 MiB ( 32768 cells,  28 layers,  1/1 seqs), K (f16): 1792.00 MiB, V (f16): 1792.00 MiB

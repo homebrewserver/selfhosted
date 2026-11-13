@@ -1,0 +1,147 @@
+=== start 2026-11-09 06:22:32
+baseline VRAM before (desktop): 2751 MiB
+llama defaults: ready in 6.653596414 s; VRAM /app/llama-server, 13920 MiB; args: 
+{"label": "llama-def-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 111.1, "tg_tps_med": 113.7, "ttft_ms_med": 102, "ttft_ms_max": 115, "gen_tokens_med": 512, "prompt_tokens_med": 69}
+{"label": "llama-def-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 73.2, "tg_tps_med": 111.8, "ttft_ms_med": 1184, "ttft_ms_max": 1835, "gen_tokens_med": 256, "prompt_tokens_med": 4124}
+{"label": "llama-def-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 259.2, "tg_tps_med": 70.1, "ttft_ms_med": 314, "ttft_ms_max": 316, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.0}
+{"label": "llama-def-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 267.8, "tg_tps_med": 73.2, "ttft_ms_med": 2190, "ttft_ms_max": 4153, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-def-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 269.9, "tg_tps_med": 74.7, "ttft_ms_med": 5805, "ttft_ms_max": 11658, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-def-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 277.1, "tg_tps_med": 75.7, "ttft_ms_med": 13170, "ttft_ms_max": 26542, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-def-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 131.1, "tg_tps_med": 47.3, "ttft_ms_med": 6854, "ttft_ms_max": 12195, "gen_tokens_med": 256.0, "prompt_tokens_med": 4122.0}
+llama np32 c262144 kvu: ready in 2.733791339 s; VRAM /app/llama-server, 15452 MiB; args: -np 32 -c 262144 --kv-unified
+{"label": "llama-np32-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 118.1, "tg_tps_med": 121.5, "ttft_ms_med": 126, "ttft_ms_max": 134, "gen_tokens_med": 512, "prompt_tokens_med": 73}
+{"label": "llama-np32-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 79.7, "tg_tps_med": 118.5, "ttft_ms_med": 1058, "ttft_ms_max": 1092, "gen_tokens_med": 256, "prompt_tokens_med": 4122}
+{"label": "llama-np32-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 290.8, "tg_tps_med": 79.6, "ttft_ms_med": 321, "ttft_ms_max": 330, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-np32-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 352.0, "tg_tps_med": 48.7, "ttft_ms_med": 587, "ttft_ms_max": 663, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-np32-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 564.2, "tg_tps_med": 42.2, "ttft_ms_med": 1217, "ttft_ms_max": 1334, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-np32-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 674.3, "tg_tps_med": 26.5, "ttft_ms_med": 2476, "ttft_ms_max": 2623, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-np32-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 141.6, "tg_tps_med": 30.9, "ttft_ms_med": 5834, "ttft_ms_max": 8875, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+llama np16 c131072 kvu: ready in 2.328440969 s; VRAM /app/llama-server, 10334 MiB; args: -np 16 -c 131072 --kv-unified
+{"label": "llama-np16-k1-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 1, "rounds": 3, "agg_tps_med": 115.9, "tg_tps_med": 121.6, "ttft_ms_med": 110, "ttft_ms_max": 126, "gen_tokens_med": 256, "prompt_tokens_med": 69}
+{"label": "llama-np16-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 291.5, "tg_tps_med": 79.3, "ttft_ms_med": 296, "ttft_ms_max": 317, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "llama-np16-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 352.2, "tg_tps_med": 48.5, "ttft_ms_med": 573, "ttft_ms_max": 580, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-np16-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 574.8, "tg_tps_med": 42.1, "ttft_ms_med": 1067, "ttft_ms_max": 1143, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-np16-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 556.1, "tg_tps_med": 41.4, "ttft_ms_med": 4690, "ttft_ms_max": 8672, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+vllm same-day check: DIED
+(EngineCore pid=186) ERROR 11-09 01:59:13 [core.py:1584] ValueError: Free memory on device cuda:0 (21.58/23.61 GiB) on startup is less than desired GPU memory utilization (0.92, 21.72 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+    raise ValueError(
+ValueError: Free memory on device cuda:0 (21.58/23.61 GiB) on startup is less than desired GPU memory utilization (0.92, 21.72 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {'EngineCore': 1}
+Traceback (most recent call last):
+  File "/usr/lib64/python3.14/urllib/request.py", line 1333, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1386, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1432, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1381, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1141, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1085, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.14/http/client.py", line 1051, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "/usr/lib64/python3.14/socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/homelab-tests/vllm-vs-llamacpp/bench.py", line 63, in <module>
+    one(a, a.prompt, [])  # warm-up, not recorded
+    ~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/homelab-tests/vllm-vs-llamacpp/bench.py", line 38, in one
+    for line in urllib.request.urlopen(req, timeout=1800):
+                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 487, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.14/urllib/request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.14/urllib/request.py", line 1362, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 1336, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.14/urllib/request.py", line 1333, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1386, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1432, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1381, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1141, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.14/http/client.py", line 1085, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.14/http/client.py", line 1051, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "/usr/lib64/python3.14/socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/homelab-tests/vllm-vs-llamacpp/bench.py", line 63, in <module>
+    one(a, a.prompt, [])  # warm-up, not recorded
+    ~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/homelab-tests/vllm-vs-llamacpp/bench.py", line 38, in one
+    for line in urllib.request.urlopen(req, timeout=1800):
+                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 487, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.14/urllib/request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.14/urllib/request.py", line 1362, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 1336, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+=== done 2026-11-09 06:59:21

@@ -1,0 +1,21 @@
+round 1 lms-defaults done 16:11:45
+round 1 lms-ctx32k done 16:12:39
+--- restart LM Studio only 16:13:33
+round 1 lms-ctx32k done 16:14:33
+round 1 lms-defaults done 16:15:34
+round 2 lms-defaults done 16:16:36
+round 2 lms-ctx32k done 16:17:39
+round 3 lms-ctx32k done 16:18:41
+round 3 lms-defaults done 16:19:43
+round 4 lms-defaults done 16:20:46
+round 4 lms-ctx32k done 16:21:46
+round 1 lms-ctx32k done 16:23:22
+round 1 lms-defaults done 16:24:57
+round 2 lms-defaults done 16:26:30
+round 2 lms-ctx32k done 16:28:05
+round 3 lms-ctx32k done 16:29:37
+round 3 lms-defaults done 16:31:12
+round 4 lms-defaults done 16:32:49
+round 4 lms-ctx32k done 16:34:26
+round 5 lms-ctx32k done 16:36:05
+round 5 lms-defaults done 16:37:42

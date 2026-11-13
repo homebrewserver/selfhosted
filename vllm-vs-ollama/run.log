@@ -1,0 +1,32 @@
+vllm-k1-short round 1: agg 113.0 tok/s, per-req tg 114.1, ttft med 52 ms max 52 ms
+vllm-k1-short round 2: agg 113.3 tok/s, per-req tg 114.2, ttft med 46 ms max 46 ms
+vllm-k1-short round 3: agg 112.5 tok/s, per-req tg 114.2, ttft med 80 ms max 80 ms
+vllm-k1-short round 4: agg 113.2 tok/s, per-req tg 114.2, ttft med 49 ms max 49 ms
+vllm-k1-short round 5: agg 113.2 tok/s, per-req tg 114.2, ttft med 49 ms max 49 ms
+vllm-k1-long round 1: agg 78.5 tok/s, per-req tg 111.6, ttft med 974 ms max 974 ms
+vllm-k1-long round 2: agg 78.5 tok/s, per-req tg 111.6, ttft med 974 ms max 974 ms
+vllm-k1-long round 3: agg 78.4 tok/s, per-req tg 111.7, ttft med 983 ms max 983 ms
+vllm-k1-long round 4: agg 78.3 tok/s, per-req tg 111.6, ttft med 985 ms max 985 ms
+vllm-k1-long round 5: agg 78.3 tok/s, per-req tg 111.6, ttft med 985 ms max 985 ms
+vllm-k4-short round 1: agg 396.8 tok/s, per-req tg 103.3, ttft med 112 ms max 113 ms
+vllm-k4-short round 2: agg 397.4 tok/s, per-req tg 103.5, ttft med 112 ms max 112 ms
+vllm-k4-short round 3: agg 397.1 tok/s, per-req tg 103.4, ttft med 112 ms max 113 ms
+vllm-k8-short round 1: agg 765.2 tok/s, per-req tg 102.3, ttft med 181 ms max 182 ms
+vllm-k8-short round 2: agg 766.0 tok/s, per-req tg 102.3, ttft med 180 ms max 181 ms
+vllm-k8-short round 3: agg 757.8 tok/s, per-req tg 102.3, ttft med 208 ms max 208 ms
+vllm-k16-short round 1: agg 1271.8 tok/s, per-req tg 88.0, ttft med 318 ms max 320 ms
+vllm-k16-short round 2: agg 1272.2 tok/s, per-req tg 88.0, ttft med 317 ms max 318 ms
+vllm-k16-short round 3: agg 1269.7 tok/s, per-req tg 88.0, ttft med 325 ms max 326 ms
+vllm-k32-short round 1: agg 1728.1 tok/s, per-req tg 60.7, ttft med 532 ms max 597 ms
+vllm-k32-short round 2: agg 1730.1 tok/s, per-req tg 60.7, ttft med 527 ms max 593 ms
+vllm-k32-short round 3: agg 1734.7 tok/s, per-req tg 61.0, ttft med 532 ms max 580 ms
+vllm-k8-long round 1: agg 189.8 tok/s, per-req tg 44.8, ttft med 4984 ms max 7957 ms
+vllm-k8-long round 2: agg 189.9 tok/s, per-req tg 44.8, ttft med 4983 ms max 7953 ms
+vllm-k8-long round 3: agg 189.9 tok/s, per-req tg 44.8, ttft med 4982 ms max 7953 ms
+{"label": "ollama-k1-short", "engine": "ollama", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 115.9, "tg_tps_med": 119.5, "ttft_ms_med": 143, "ttft_ms_max": 148, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "ollama-k1-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 78.8, "tg_tps_med": 117.6, "ttft_ms_med": 1076, "ttft_ms_max": 1084, "gen_tokens_med": 256, "prompt_tokens_med": 4119}
+{"label": "ollama-k4-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 113.6, "tg_tps_med": 119.8, "ttft_ms_med": 3489, "ttft_ms_max": 6876, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.0}
+{"label": "ollama-k8-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 113.2, "tg_tps_med": 119.4, "ttft_ms_med": 8000, "ttft_ms_max": 15930, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "ollama-k16-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 111.8, "tg_tps_med": 118.1, "ttft_ms_med": 17123, "ttft_ms_max": 34468, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "ollama-k32-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 110.5, "tg_tps_med": 116.4, "ttft_ms_med": 35582, "ttft_ms_max": 71991, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+{"label": "ollama-k8-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 77.2, "tg_tps_med": 116.3, "ttft_ms_med": 12611, "ttft_ms_max": 24320, "gen_tokens_med": 256.0, "prompt_tokens_med": 4122.0}

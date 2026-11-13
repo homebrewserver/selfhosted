@@ -1,0 +1,34 @@
+il-27b-llama-defaults            long  n=5 tg=  41.7 [41.6-41.7] pp=   1392 ttft= 3144ms ptok=4120 temp=50->86
+il-27b-llama-defaults            short n=5 tg=  42.4 [42.4-42.4] pp=    434 ttft=  266ms ptok=71 temp=50->88
+il-27b-llama-ollamaflags         long  n=5 tg=  41.7 [41.7-41.8] pp=   1390 ttft= 3141ms ptok=4123 temp=50->86
+il-27b-llama-ollamaflags         short n=5 tg=  42.4 [42.4-42.5] pp=    430 ttft=  270ms ptok=71 temp=50->88
+il-27b-ollama                    long  n=5 tg=  41.8 [41.7-41.8] pp=   1391 ttft= 3372ms ptok=4119 temp=50->86
+il-27b-ollama                    short n=5 tg=  42.3 [42.3-42.4] pp=    386 ttft=  367ms ptok=73 temp=50->88
+il-9b-llama-defaults             long  n=5 tg= 118.9 [118.2-119.0] pp=   4378 ttft= 1060ms ptok=4122 temp=50->83
+il-9b-llama-defaults             short n=5 tg= 121.6 [121.0-121.7] pp=   1131 ttft=  133ms ptok=71 temp=50->84
+il-9b-llama-ollamaflags          long  n=5 tg= 119.1 [119.1-119.2] pp=   4575 ttft= 1008ms ptok=4122 temp=50->83
+il-9b-llama-ollamaflags          short n=5 tg= 121.8 [120.6-122.2] pp=   1199 ttft=   99ms ptok=72 temp=49->84
+il-9b-ollama                     long  n=5 tg= 118.5 [117.6-118.7] pp=   4648 ttft= 1089ms ptok=4121 temp=50->83
+il-9b-ollama                     short n=5 tg= 120.6 [120.3-121.0] pp=   1257 ttft=  131ms ptok=70 temp=50->84
+cpu-9b-llama-defaults            long  n=3 tg=   6.8 [6.7-6.8] pp=     84 ttft=49159ms ptok=4121 temp=39->40
+cpu-9b-llama-defaults            short n=3 tg=   7.5 [7.5-7.6] pp=     72 ttft=  961ms ptok=67 temp=40->40
+cpu-9b-ollama                    short n=3 tg=   7.6 [7.6-7.6] pp=     69 ttft= 1123ms ptok=73 temp=42->41
+cpu-9b-ollama-ctx8k              long  n=3 tg=   6.7 [6.6-6.7] pp=     79 ttft=51999ms ptok=4121 temp=48->47
+cc-9b-ollama-np1 114.5
+cc-9b-ollama-np4 266.4
+cc-9b-llama-defaults 292.7
+cc-27b-ollama-np1 39.8
+cc-27b-ollama-np4 33.1
+cc-27b-llama-defaults 100.2
+03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8  models/Qwen3.5-9B-Q4_K_M.gguf
+84b5f7f112156d63836a01a69dc3f11a6ba63b10a23b8ca7a7efaf52d5a2d806  models/Qwen3.5-27B-Q4_K_M.gguf
+
+# Figures read from terminal output during the run (8 Nov 2026), not in results.jsonl
+GPU memory per process (nvidia-smi): 9B ollama defaults 6530 MiB; 9B llama defaults 13934 MiB; 9B llama ollama-flags 6540 MiB; 9B ollama NP4 9606 MiB
+27B ollama defaults 17960 MiB; 27B llama defaults 21770 MiB (n_ctx_slot 85760, 4 slots unified, --fit); 27B llama ollama-flags 17968 MiB; 27B ollama NP4 21596 MiB, ollama ps 26 GB 16%/84% CPU/GPU
+Container RAM (docker stats): CPU 9B ollama (8k ctx, long run) 6.99 GiB; CPU 9B llama defaults 12.38 GiB
+Thermal probe after back-to-back 27B runs: 91 C, SM clock 1395 MHz (idle-hot 1695 MHz), throttle reason 0x20 (SW thermal slowdown)
+Load: llama 9B ready 2.58 s, 27B 9.71 s after docker run; ollama 9B first request 67.5 s (load 31.9 s), reloads 2.7 s; 27B first 88.2 s (load 46.5 s), reload 4.3 s
+Ollama NP4 9B: first concurrency session one of three rounds at 111.4 tok/s; cooled session round 1 119.7 tok/s
+Threads: both n_threads = 12 (CPU run logs)
+Ollama llama-server cmd: 9B defaults -c 32768 -np 1 --flash-attn auto -b 1024 -ub 1024 --context-shift --keep 4; 27B defaults same with -b 512 -ub 512; NP4 -c 131072 -np 4 -b 512; CPU -c 4096 --load-mode none -b 512

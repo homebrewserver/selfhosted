@@ -1,0 +1,126 @@
+===== 1 baseline --gpus=all
+docker run --gpus=all   options={}
+eval tok/s 116.2, load 42.9 s, tokens 61
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    6.6 GB    100% GPU     32768      llamacpp    4 minutes from now    
+api/ps size 6618370538 size_vram 6618370538 context 32768
+nvidia-smi: /usr/lib/ollama/llama-server, 7630 MiB;
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:15:13.811Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="21.6 GiB"
+time=2026-11-09T02:15:13.812Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="23.6 GiB" default_num_ctx=32768
+time=2026-11-09T02:15:14.872Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 42987 --host 127.0.0.1 --no-webui --offline -c 32768 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj 
+time=2026-11-09T02:15:14.873Z level=INFO source=sched.go:658 msg="gpu memory" id=0 library=CUDA available="21.2 GiB" free="21.6 GiB" minimum="457.0 MiB" overhead="0 B"
+load_tensors: offloaded 34/34 layers to GPU
+===== 2 no --gpus flag
+docker run    options={}
+eval tok/s 7.6, load 5.3 s, tokens 59
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    6.1 GB    100% CPU     4096       llamacpp    4 minutes from now    
+api/ps size 6088378283 size_vram 0 context 4096
+nvidia-smi: 
+in container: OCI runtime exec failed: exec failed: unable to start container process: exec: "nvidia-smi": executable file not found in $PATH
+time=2026-11-09T02:16:25.817Z level=INFO source=types.go:50 msg="inference compute" id=cpu library=cpu compute="" name=cpu description=cpu libdirs=ollama driver="" pci_id="" type="" total="62.7 GiB" available="62.6 GiB"
+time=2026-11-09T02:16:25.817Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="0 B" default_num_ctx=4096
+time=2026-11-09T02:16:25.886Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 36043 --host 127.0.0.1 --no-webui --offline -c 4096 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /
+===== 3 CUDA_VISIBLE_DEVICES=-1
+docker run --gpus=all -e CUDA_VISIBLE_DEVICES=-1  options={}
+eval tok/s 7.5, load 5.3 s, tokens 59
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    6.1 GB    100% CPU     4096       llamacpp    4 minutes from now    
+api/ps size 6088378283 size_vram 0 context 4096
+nvidia-smi: 
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:16:42.815Z level=WARN source=runner.go:722 msg="user overrode visible devices" CUDA_VISIBLE_DEVICES=-1
+time=2026-11-09T02:16:42.815Z level=WARN source=runner.go:726 msg="if GPUs are not correctly discovered, unset and try again"
+time=2026-11-09T02:16:43.939Z level=INFO source=types.go:50 msg="inference compute" id=cpu library=cpu compute="" name=cpu description=cpu libdirs=ollama driver="" pci_id="" type="" total="62.7 GiB" available="62.6 GiB"
+time=2026-11-09T02:16:43.939Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="0 B" default_num_ctx=4096
+time=2026-11-09T02:16:44.010Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 45433 --host 127.0.0.1 --no-webui --offline -c 4096 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /
+===== 4 num_gpu 0
+docker run --gpus=all   options={"num_gpu":0}
+eval tok/s 7.6, load 6.8 s, tokens 59
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    7.2 GB    100% CPU     32768      llamacpp    4 minutes from now    
+api/ps size 7208288908 size_vram 0 context 32768
+nvidia-smi: 
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:17:04.671Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="21.6 GiB"
+time=2026-11-09T02:17:04.671Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="23.6 GiB" default_num_ctx=32768
+time=2026-11-09T02:17:05.714Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 39849 --host 127.0.0.1 --no-webui --offline -c 32768 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj 
+===== 5 num_gpu 16
+docker run --gpus=all   options={"num_gpu":16}
+eval tok/s 14.9, load 33.6 s, tokens 59
+NAME          ID              SIZE      PROCESSOR          CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    7.4 GB    52%/48% CPU/GPU    32768      llamacpp    4 minutes from now    
+api/ps size 7411807023 size_vram 3574490725 context 32768
+nvidia-smi: /usr/lib/ollama/llama-server, 3706 MiB;
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:17:26.987Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="21.6 GiB"
+time=2026-11-09T02:17:26.987Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="23.6 GiB" default_num_ctx=32768
+time=2026-11-09T02:17:27.951Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 46223 --host 127.0.0.1 --no-webui --offline -c 32768 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj 
+time=2026-11-09T02:17:27.951Z level=INFO source=sched.go:658 msg="gpu memory" id=0 library=CUDA available="21.2 GiB" free="21.6 GiB" minimum="457.0 MiB" overhead="0 B"
+load_tensors: offloaded 16/34 layers to GPU
+===== 6 num_ctx 262144
+docker run --gpus=all   options={"num_ctx":262144}
+eval tok/s 115.7, load 39.7 s, tokens 61
+NAME          ID              SIZE     PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    14 GB    100% GPU     262144     llamacpp    4 minutes from now    
+api/ps size 14604325354 size_vram 14604325354 context 262144
+nvidia-smi: /usr/lib/ollama/llama-server, 15246 MiB;
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:18:36.441Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="21.6 GiB"
+time=2026-11-09T02:18:36.441Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="23.6 GiB" default_num_ctx=32768
+time=2026-11-09T02:18:37.505Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 38703 --host 127.0.0.1 --no-webui --offline -c 262144 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj
+time=2026-11-09T02:18:37.505Z level=INFO source=sched.go:658 msg="gpu memory" id=0 library=CUDA available="21.2 GiB" free="21.6 GiB" minimum="457.0 MiB" overhead="0 B"
+load_tensors: offloaded 34/34 layers to GPU
+===== 7 OLLAMA_NUM_PARALLEL=16
+docker run --gpus=all -e OLLAMA_NUM_PARALLEL=16  options={}
+eval tok/s 27.8, load 36.2 s, tokens 59
+NAME          ID              SIZE     PROCESSOR          CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    27 GB    23%/77% CPU/GPU    32768      llamacpp    4 minutes from now    
+api/ps size 27251661862 size_vram 21006846524 context 32768
+nvidia-smi: /usr/lib/ollama/llama-server, 21350 MiB;
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:19:48.078Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="21.5 GiB"
+time=2026-11-09T02:19:48.078Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="23.6 GiB" default_num_ctx=32768
+time=2026-11-09T02:19:49.059Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 41915 --host 127.0.0.1 --no-webui --offline -c 524288 -np 16 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmpro
+time=2026-11-09T02:19:49.060Z level=INFO source=sched.go:658 msg="gpu memory" id=0 library=CUDA available="21.1 GiB" free="21.5 GiB" minimum="457.0 MiB" overhead="0 B"
+load_tensors: offloaded 26/34 layers to GPU
+===== 8 OLLAMA_CONTEXT_LENGTH=4096 + NUM_PARALLEL=16
+docker run --gpus=all -e OLLAMA_NUM_PARALLEL=16 -e OLLAMA_CONTEXT_LENGTH=4096  options={}
+eval tok/s 115.8, load 31.9 s, tokens 61
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    8.7 GB    100% GPU     4096       llamacpp    4 minutes from now    
+api/ps size 8650290625 size_vram 8650290625 context 4096
+nvidia-smi: /usr/lib/ollama/llama-server, 9566 MiB;
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:20:57.987Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="21.5 GiB"
+time=2026-11-09T02:20:57.987Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="23.6 GiB" default_num_ctx=32768
+time=2026-11-09T02:20:59.000Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 42527 --host 127.0.0.1 --no-webui --offline -c 65536 -np 16 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj
+time=2026-11-09T02:20:59.000Z level=INFO source=sched.go:658 msg="gpu memory" id=0 library=CUDA available="21.1 GiB" free="21.5 GiB" minimum="457.0 MiB" overhead="0 B"
+load_tensors: offloaded 34/34 layers to GPU
+===== 9 GPU memory held by another server
+docker run --gpus=all   options={}
+eval tok/s 115.3, load 33.4 s, tokens 61
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    6.6 GB    100% GPU     32768      llamacpp    4 minutes from now    
+api/ps size 6618370538 size_vram 6618370538 context 32768
+nvidia-smi: /usr/lib/ollama/llama-server, 7630 MiB;
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:22:28.855Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="21.5 GiB"
+time=2026-11-09T02:22:28.855Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="23.6 GiB" default_num_ctx=32768
+time=2026-11-09T02:22:29.911Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 41755 --host 127.0.0.1 --no-webui --offline -c 32768 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj 
+time=2026-11-09T02:22:29.911Z level=INFO source=sched.go:658 msg="gpu memory" id=0 library=CUDA available="21.1 GiB" free="21.5 GiB" minimum="457.0 MiB" overhead="0 B"
+load_tensors: offloaded 34/34 layers to GPU
+===== 10 fixed: --gpus=all again
+docker run --gpus=all   options={}
+eval tok/s 114.8, load 31.8 s, tokens 61
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3.5:9b    6488c96fa5fa    6.6 GB    100% GPU     32768      llamacpp    4 minutes from now    
+api/ps size 6618370538 size_vram 6618370538 context 32768
+nvidia-smi: /usr/lib/ollama/llama-server, 7630 MiB;
+in container: GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-228dcc94-525c-2619-de87-120ffb67ebb4)
+time=2026-11-09T02:23:33.975Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="21.5 GiB"
+time=2026-11-09T02:23:33.975Z level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="23.6 GiB" default_num_ctx=32768
+time=2026-11-09T02:23:34.980Z level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="/usr/lib/ollama/llama-server --model /root/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c --port 40561 --host 127.0.0.1 --no-webui --offline -c 32768 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj 
+time=2026-11-09T02:23:34.980Z level=INFO source=sched.go:658 msg="gpu memory" id=0 library=CUDA available="21.1 GiB" free="21.5 GiB" minimum="457.0 MiB" overhead="0 B"
+load_tensors: offloaded 34/34 layers to GPU

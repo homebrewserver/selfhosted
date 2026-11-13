@@ -1,0 +1,180 @@
+2026-11-08T18:06:37+05:00
+NVIDIA GeForce RTX 3090, 615.78.08
+=== install, CPU only (no --gpus)
+
+$ sh -c time docker run -d --name ollama-rmtest2 -p 127.0.0.1:11535:11434 -v ollama-rmtest2:/root/.ollama ollama/ollama:0.40.15
+d9752b81a7891dc828f162c98c57997b09e22f456ea1489a91096d99a5724862
+real	0m0.344s
+user	0m0.010s
+sys	0m0.015s
+
+$ docker exec ollama-rmtest2 ollama --version
+ollama version is 0.40.15
+
+$ sh -c docker logs ollama-rmtest2 2>&1 | grep -i -E 'inference compute|no compatible|gpu' | head -5
+time=2026-11-08T13:06:37.879Z level=INFO source=routes.go:2474 msg="server config" env="map[CUDA_VISIBLE_DEVICES: GGML_VK_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: LLAMA_ARG_FIT: LLAMA_ARG_FIT_TARGET: NO_PROXY: OLLAMA_CONTEXT_LENGTH:0 OLLAMA_CREATE_REMOTE:false OLLAMA_DEBUG:INFO OLLAMA_DEBUG_LOG_REQUESTS:false OLLAMA_EDITOR: OLLAMA_FLASH_ATTENTION:false OLLAMA_GO_TEMPLATE:true OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://0.0.0.0:11434 OLLAMA_IGPU_ENABLE: OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MAX_TRANSFER_STREAMS:4 OLLAMA_MODELS:/root/.ollama/models OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NO_CLOUD:false OLLAMA_NUM_PARALLEL:1 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_REMOTES:[ollama.com] OLLAMA_SCHED_SPREAD:false OLLAMA_VULKAN:true ROCR_VISIBLE_DEVICES: http_proxy: https_proxy: no_proxy:]"
+time=2026-11-08T13:06:37.881Z level=INFO source=runner.go:60 msg="discovering available GPUs..."
+time=2026-11-08T13:06:38.270Z level=INFO source=types.go:50 msg="inference compute" id=cpu library=cpu compute="" name=cpu description=cpu libdirs=ollama driver="" pci_id="" type="" total="62.7 GiB" available="62.5 GiB"
+
+$ sh -c time docker exec ollama-rmtest2 ollama pull qwen3:0.6b
+verifying sha256 digest 
+writing manifest 
+success 
+real	2m17.443s
+user	0m0.048s
+sys	0m0.036s
+
+$ docker exec ollama-rmtest2 ollama pull smollm2:135m
+verifying sha256 digest 
+writing manifest 
+success 
+
+$ sh -c docker exec ollama-rmtest2 ollama run qwen3:0.6b 'Reply with one word: ok' --think=false --verbose 2>&1 | grep -E 'eval rate|^ok|Ok|OK'
+prompt eval rate:     728.12 tokens/s
+eval rate:            156.86 tokens/s
+
+$ docker exec ollama-rmtest2 ollama ps
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+=== list: CLI and API
+
+$ docker exec ollama-rmtest2 ollama list
+NAME            ID              SIZE      MODIFIED           
+smollm2:135m    9077fe9d2ae1    270 MB    1 second ago          
+qwen3:0.6b      7df6b6e09427    522 MB    About a minute ago    
+
+$ sh -c curl -s http://127.0.0.1:11535/api/tags | python3 -c 'import json,sys;[print(m["name"],m["size"]) for m in json.load(sys.stdin)["models"]]'
+smollm2:135m 270898672
+qwen3:0.6b 522653767
+
+$ sh -c curl -s http://127.0.0.1:11535/api/ps | python3 -c 'import json,sys;[print(m["name"],m.get("size_vram"),m.get("expires_at")) for m in json.load(sys.stdin)["models"]]'
+qwen3:0.6b 0 2026-11-08T13:15:16.663672217Z
+=== unload a model
+
+$ docker exec ollama-rmtest2 ollama stop qwen3:0.6b
+
+$ docker exec ollama-rmtest2 ollama ps
+NAME    ID    SIZE    PROCESSOR    CONTEXT    RUNNER    UNTIL 
+=== second server in the same container
+
+$ docker exec ollama-rmtest2 ollama serve
+Error: listen tcp 0.0.0.0:11434: bind: address already in use
+=== recreate with the GPU, same volume
+
+$ docker rm -f ollama-rmtest2
+ollama-rmtest2
+
+$ docker run -d --gpus=all --name ollama-rmtest2 -p 127.0.0.1:11535:11434 -v ollama-rmtest2:/root/.ollama ollama/ollama:0.40.15
+c743a90313511f504806600644dacd14375d368d2348c3fdda24a3ebb52eb0ab
+
+$ sh -c docker logs ollama-rmtest2 2>&1 | grep -i -E 'inference compute' | head -3
+time=2026-11-08T13:10:21.773Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="15.9 GiB"
+
+$ docker exec ollama-rmtest2 ollama list
+NAME            ID              SIZE      MODIFIED           
+smollm2:135m    9077fe9d2ae1    270 MB    8 seconds ago         
+qwen3:0.6b      7df6b6e09427    522 MB    About a minute ago    
+
+$ sh -c docker exec ollama-rmtest2 ollama run qwen3:0.6b 'Reply with one word: ok' --think=false --verbose 2>&1 | grep -E 'eval rate'
+prompt eval rate:     1.17 tokens/s
+eval rate:            0.28 tokens/s
+
+$ docker exec ollama-rmtest2 ollama ps
+NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+=== delete via API
+
+$ curl -s -w \nHTTP %{http_code}\n -X DELETE http://127.0.0.1:11535/api/delete -d {"model":"qwen3:0.6b"}
+HTTP 200
+
+$ curl -s -w \nHTTP %{http_code}\n -X DELETE http://127.0.0.1:11535/api/delete -d {"model":"qwen3:0.6b"}
+{"error":"model 'qwen3:0.6b' not found"}
+HTTP 404
+
+$ docker exec ollama-rmtest2 ollama list
+NAME            ID              SIZE      MODIFIED           
+smollm2:135m    9077fe9d2ae1    270 MB    About a minute ago    
+=== port already used on the host
+
+$ docker run --rm -d --name ollama-rmtest2-clash -p 127.0.0.1:11535:11434 ollama/ollama:0.40.15
+916ea2167597689223424f60caa20cc954c0a9df27f6559007dc1fdcb569e710
+docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint ollama-rmtest2-clash (6eb13fdb5c8341b8bb7c8ad3dea4805840f20cbfbabdd91de05803082df1db17): Bind for 127.0.0.1:11535 failed: port is already allocated
+Run 'docker run --help' for more information
+=== stop, start, restart
+
+$ sh -c time docker stop ollama-rmtest2
+ollama-rmtest2
+real	0m0.440s
+user	0m0.009s
+sys	0m0.013s
+
+$ curl -s -m 3 http://127.0.0.1:11535/api/version
+
+$ docker start ollama-rmtest2
+ollama-rmtest2
+
+$ curl -s http://127.0.0.1:11535/api/version
+{"version":"0.40.15"}
+
+$ sh -c time docker restart ollama-rmtest2
+ollama-rmtest2
+real	0m0.400s
+user	0m0.013s
+sys	0m0.009s
+=== update: recreate on a newer image, same volume
+
+$ docker inspect ollama/ollama:latest --format {{.Created}} {{index .Config.Labels "org.opencontainers.image.version"}}
+2026-06-18T00:09:45.593648928Z 24.04
+
+$ docker rm -f ollama-rmtest2
+ollama-rmtest2
+
+$ docker run -d --gpus=all --name ollama-rmtest2 -p 127.0.0.1:11535:11434 -v ollama-rmtest2:/root/.ollama ollama/ollama:latest
+b8484072d3925ee51d9d7082399dec7548472dd8e4becd420e5532ebf9760a48
+
+$ docker exec ollama-rmtest2 ollama --version
+ollama version is 0.30.10
+
+$ docker exec ollama-rmtest2 ollama list
+NAME            ID              SIZE      MODIFIED           
+smollm2:135m    bd88ef9f8570    270 MB    About a minute ago    
+
+$ docker rm -f ollama-rmtest2
+ollama-rmtest2
+=== Compose
+
+$ docker compose -f /tmp/ollama-compose-test/compose.yaml up -d
+ Network ollama-compose-test_default Creating 
+ Network ollama-compose-test_default Creating 
+ Network ollama-compose-test_default Created 
+ Network ollama-compose-test_default Created 
+ Container ollama-composetest Creating 
+ Container ollama-composetest Created 
+ Container ollama-composetest Starting 
+ Container ollama-composetest Started 
+
+$ docker exec ollama-composetest ollama list
+NAME            ID              SIZE      MODIFIED           
+smollm2:135m    9077fe9d2ae1    270 MB    About a minute ago    
+
+$ sh -c docker logs ollama-composetest 2>&1 | grep -i 'inference compute' | head -2
+time=2026-11-08T13:11:31.561Z level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.6 name=CUDA0 description="NVIDIA GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.4 pci_id=0000:09:00.0 type=discrete total="23.6 GiB" available="16.1 GiB"
+
+$ docker compose -f /tmp/ollama-compose-test/compose.yaml down
+ Container ollama-composetest Stopping 
+ Container ollama-composetest Stopped 
+ Container ollama-composetest Removing 
+ Container ollama-composetest Removed 
+ Network ollama-compose-test_default Removing 
+ Network ollama-compose-test_default Removed 
+=== clean up
+
+$ sh -c docker system df -v 2>/dev/null | grep -E '^VOLUME NAME|ollama-rmtest2'
+VOLUME NAME                                                        LINKS     SIZE
+ollama-rmtest2                                                     0         270.9MB
+
+$ docker volume rm ollama-rmtest2
+ollama-rmtest2
+
+$ docker images ollama/ollama --format {{.Repository}}:{{.Tag}} {{.Size}}
+ollama/ollama:0.40.15 8.5GB
+ollama/ollama:latest 8.29GB
+2026-11-08T18:11:41+05:00

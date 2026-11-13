@@ -1,0 +1,71 @@
+9b lms-defaults lms-load-s 2.37
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    8192       4           Local        
+9b lms-defaults vram 1611505, 5732 MiB
+9b lms-ctx32k lms-load-s 2.33
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    32768      1           Local        
+9b lms-ctx32k vram 1613537, 6374 MiB
+9b lms-ctx32k lms-load-s 2.57
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    32768      1           Local        
+9b lms-ctx32k vram 1617881, 6374 MiB
+9b lms-defaults lms-load-s 2.34
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    8192       4           Local        
+9b lms-defaults vram 1620187, 5732 MiB
+9b lms-defaults lms-load-s 2.41
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    8192       4           Local        
+9b lms-defaults vram 1622861, 5732 MiB
+9b lms-ctx32k lms-load-s 2.37
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    32768      1           Local        
+9b lms-ctx32k vram 1624798, 6374 MiB
+9b lms-ctx32k lms-load-s 2.39
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    32768      1           Local        
+9b lms-ctx32k vram 1627687, 6374 MiB
+9b lms-defaults lms-load-s 2.4
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    8192       4           Local        
+9b lms-defaults vram 1629780, 5732 MiB
+9b lms-defaults lms-load-s 2.49
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    8192       4           Local        
+9b lms-defaults vram 1632712, 5732 MiB
+9b lms-ctx32k lms-load-s 2.37
+qwen3.5-9b    qwen3.5-9b    IDLE      5.68 GB    32768      1           Local        
+9b lms-ctx32k vram 1634844, 6374 MiB
+27b lms-ctx32k lms-load-s 8.3
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    32768      1           Local        
+27b lms-ctx32k vram 1638425, 17956 MiB
+27b lms-defaults lms-load-s 3.99
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    8192       4           Local        
+27b lms-defaults vram 1641086, 16846 MiB
+27b lms-defaults lms-load-s 4.04
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    8192       4           Local        
+27b lms-defaults vram 1643673, 16846 MiB
+27b lms-ctx32k lms-load-s 3.99
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    32768      1           Local        
+27b lms-ctx32k vram 1645979, 17956 MiB
+27b lms-ctx32k lms-load-s 3.97
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    32768      1           Local        
+27b lms-ctx32k vram 1648343, 17956 MiB
+27b lms-defaults lms-load-s 3.96
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    8192       4           Local        
+27b lms-defaults vram 1650640, 16846 MiB
+27b lms-defaults lms-load-s 3.97
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    8192       4           Local        
+27b lms-defaults vram 1652988, 16846 MiB
+27b lms-ctx32k lms-load-s 3.97
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    32768      1           Local        
+27b lms-ctx32k vram 1655378, 17956 MiB
+27b lms-ctx32k lms-load-s 3.97
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    32768      1           Local        
+27b lms-ctx32k vram 1657898, 17956 MiB
+27b lms-defaults lms-load-s 4.02
+qwen3.5-27b    qwen3.5-27b    IDLE      16.74 GB    8192       4           Local        
+27b lms-defaults vram 1660329, 16846 MiB
+cc 9b np4 vram 1663811, 5744 MiB
+cc 9b np1 vram 1666598, 5604 MiB
+cc 27b np4 vram 1670100, 16858 MiB
+cc 27b np1 vram 1674223, 16432 MiB
+bench-lms 4.796GiB / 62.72GiB
+idle-no-model bench-lms 472.3MiB / 62.72GiB
+idle-no-model gpu 23615, 140 MiB
+idle-no-model gpu 29888, 495 MiB
+idle-no-model gpu 1198972, 63 MiB
+idle-no-model gpu 1467164, 38 MiB
+idle-no-model gpu 1679086, 219 MiB
