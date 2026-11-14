@@ -1,0 +1,76 @@
+17:03:23 il 9B round 1 v1 done
+17:04:19 il 9B round 1 old done
+17:05:11 il 9B round 2 old done
+17:06:06 il 9B round 2 v1 done
+17:07:06 il 9B round 3 v1 done
+17:08:03 il 9B round 3 old done
+17:09:01 il 9B round 4 old done
+17:10:00 il 9B round 4 v1 done
+17:11:02 il 9B round 5 v1 done
+17:12:01 il 9B round 5 old done
+17:13:32 il 27B round 1 v1 done
+17:15:01 il 27B round 1 old done
+17:16:36 il 27B round 2 old done
+17:18:12 il 27B round 2 v1 done
+17:19:51 il 27B round 3 v1 done
+17:21:21 il 27B round 3 old done
+17:22:51 il 27B round 4 old done
+17:24:17 il 27B round 4 v1 done
+17:25:44 il 27B round 5 v1 done
+17:27:10 il 27B round 5 old done
+17:28:43 cc 9B v1 done
+17:30:14 cc 9B old done
+17:31:40 cc 9B v1 done
+17:33:11 cc 9B old done
+17:35:11 cc 27B v1 done
+17:37:26 cc 27B old done
+17:39:30 cc 27B v1 done
+17:41:39 cc 27B old done
+17:41:42 ALL DONE (base)
+18:43:10 sp 9B round 1 old-mtp done
+18:44:06 sp 9B round 1 v1-nomtp done
+18:45:01 sp 9B round 1 old-nomtp done
+18:45:57 sp 9B round 1 v1-mtp done
+18:46:52 sp 9B round 2 v1-nomtp done
+18:47:46 sp 9B round 2 old-nomtp done
+18:48:41 sp 9B round 2 v1-mtp done
+18:49:37 sp 9B round 2 old-mtp done
+18:50:34 sp 9B round 3 old-nomtp done
+18:51:26 sp 9B round 3 v1-mtp done
+18:52:20 sp 9B round 3 old-mtp done
+18:53:16 sp 9B round 3 v1-nomtp done
+18:54:11 sp 9B round 4 v1-mtp done
+18:55:08 sp 9B round 4 old-mtp done
+18:56:02 sp 9B round 4 v1-nomtp done
+18:56:59 sp 9B round 4 old-nomtp done
+18:57:53 sp 9B round 5 old-mtp done
+18:58:48 sp 9B round 5 v1-nomtp done
+18:59:42 sp 9B round 5 old-nomtp done
+19:00:37 sp 9B round 5 v1-mtp done
+19:01:58 sp 27B round 1 old-mtp done
+19:03:24 sp 27B round 1 v1-nomtp done
+19:04:54 sp 27B round 1 old-nomtp done
+19:06:12 sp 27B round 1 v1-mtp done
+19:07:38 sp 27B round 2 v1-nomtp done
+19:09:05 sp 27B round 2 old-nomtp done
+19:10:20 sp 27B round 2 v1-mtp done
+19:11:41 sp 27B round 2 old-mtp done
+19:13:04 sp 27B round 3 old-nomtp done
+19:14:20 sp 27B round 3 v1-mtp done
+19:15:40 sp 27B round 3 old-mtp done
+19:17:06 sp 27B round 3 v1-nomtp done
+19:18:20 sp 27B round 4 v1-mtp done
+19:19:44 sp 27B round 4 old-mtp done
+19:21:09 sp 27B round 4 v1-nomtp done
+19:22:34 sp 27B round 4 old-nomtp done
+19:23:55 sp 27B round 5 old-mtp done
+19:25:22 sp 27B round 5 v1-nomtp done
+19:26:50 sp 27B round 5 old-nomtp done
+19:28:08 sp 27B round 5 v1-mtp done
+19:30:57 cpu round 1 v1 done
+19:33:42 cpu round 1 old done
+19:36:36 cpu round 2 old done
+19:39:24 cpu round 2 v1 done
+19:42:13 cpu round 3 v1 done
+19:45:03 cpu round 3 old done
+19:45:06 ALL DONE (spec)

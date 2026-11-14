@@ -1,0 +1,26 @@
+14:49:42 MEM il-9b-old-ollamaflags 113444, 337 MiB 115860, 256 MiB 120097, 209 MiB 312461, 6528 MiB 
+14:50:42 MEM il-9b-new-defaults 113444, 337 MiB 115860, 256 MiB 120097, 209 MiB 314005, 13944 MiB 
+14:51:44 MEM il-9b-old-defaults 113444, 337 MiB 115860, 256 MiB 120097, 209 MiB 315065, 13932 MiB 
+14:52:44 MEM il-9b-new-ollamaflags 113444, 337 MiB 115860, 256 MiB 120097, 244 MiB 315973, 6528 MiB 
+15:09:58 MEM il-27b-old-ollamaflags 113444, 337 MiB 115860, 259 MiB 120097, 239 MiB 330341, 17968 MiB 
+15:11:27 MEM il-27b-new-defaults 113444, 337 MiB 115860, 232 MiB 120097, 239 MiB 332023, 21278 MiB 
+15:12:57 MEM il-27b-old-defaults 113444, 337 MiB 115860, 448 MiB 120097, 239 MiB 333692, 21278 MiB 
+15:14:27 MEM il-27b-new-ollamaflags 113444, 337 MiB 115860, 369 MiB 120097, 239 MiB 335500, 17968 MiB 
+15:39:24 MEM cc-9b-new-defaults 113444, 337 MiB 115860, 297 MiB 120097, 230 MiB 357013, 13932 MiB 
+0.01.701.119 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+15:40:52 MEM cc-9b-old-defaults 113444, 337 MiB 115860, 297 MiB 120097, 260 MiB 359092, 13932 MiB 
+0.01.647.052 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+15:42:18 MEM cc-9b-new-defaults 113444, 337 MiB 115860, 297 MiB 120097, 263 MiB 360844, 13932 MiB 
+0.01.521.916 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+15:43:47 MEM cc-9b-old-defaults 113444, 337 MiB 115860, 322 MiB 120097, 230 MiB 362765, 13932 MiB 
+0.01.639.122 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+15:45:42 MEM cc-27b-new-defaults 113444, 337 MiB 115860, 355 MiB 120097, 256 MiB 365291, 21132 MiB 
+0.03.281.661 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 75520, kv_unified = 'true'
+15:47:49 MEM cc-27b-old-defaults 113444, 337 MiB 115860, 197 MiB 120097, 226 MiB 368327, 21196 MiB 
+0.03.493.970 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 76544, kv_unified = 'true'
+15:49:51 MEM cc-27b-new-defaults 113444, 337 MiB 115860, 198 MiB 120097, 256 MiB 373986, 21294 MiB 
+0.03.334.928 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 78080, kv_unified = 'true'
+15:51:58 MEM cc-27b-old-defaults 113444, 337 MiB 115860, 197 MiB 120097, 256 MiB 376738, 21262 MiB 
+0.03.294.753 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 77568, kv_unified = 'true'
+0.06.749.271 I cmn          init: llama threadpool init, n_threads = 12
+0.06.747.755 I cmn          init: llama threadpool init, n_threads = 12

@@ -1,0 +1,32 @@
+round 1: 1024 tokens in 3.27s = 312.7 tok/s
+round 2: 1024 tokens in 3.22s = 317.8 tok/s
+round 3: 1024 tokens in 3.23s = 316.9 tok/s
+{"label": "cc-9B-v1", "engine": "llama", "k": 4, "n": 256, "median_agg_tps": 316.9, "all": [312.74563168668965, 317.8457091271075, 316.8703015403119]}
+round 1: 1024 tokens in 3.66s = 279.9 tok/s
+round 2: 1024 tokens in 3.67s = 279.2 tok/s
+round 3: 1024 tokens in 3.72s = 275.4 tok/s
+{"label": "cc-9B-old", "engine": "llama", "k": 4, "n": 256, "median_agg_tps": 279.2, "all": [279.8931831836134, 279.2055385159213, 275.402189154211]}
+round 1: 1024 tokens in 3.16s = 324.3 tok/s
+round 2: 1024 tokens in 3.23s = 316.7 tok/s
+round 3: 1024 tokens in 3.25s = 315.5 tok/s
+{"label": "cc-9B-v1", "engine": "llama", "k": 4, "n": 256, "median_agg_tps": 316.7, "all": [324.2889991798539, 316.71567977907205, 315.4506715560807]}
+round 1: 1024 tokens in 3.63s = 282.1 tok/s
+round 2: 1024 tokens in 3.71s = 276.1 tok/s
+round 3: 1024 tokens in 3.72s = 275.0 tok/s
+{"label": "cc-9B-old", "engine": "llama", "k": 4, "n": 256, "median_agg_tps": 276.1, "all": [282.05205260935173, 276.13781191225604, 274.9946431096546]}
+round 1: 1024 tokens in 8.59s = 119.2 tok/s
+round 2: 1024 tokens in 8.95s = 114.5 tok/s
+round 3: 1024 tokens in 8.91s = 115.0 tok/s
+{"label": "cc-27B-v1", "engine": "llama", "k": 4, "n": 256, "median_agg_tps": 115.0, "all": [119.23135023908084, 114.4709335453613, 114.95090143681522]}
+round 1: 1024 tokens in 10.53s = 97.3 tok/s
+round 2: 1024 tokens in 10.71s = 95.6 tok/s
+round 3: 1024 tokens in 10.67s = 96.0 tok/s
+{"label": "cc-27B-old", "engine": "llama", "k": 4, "n": 256, "median_agg_tps": 96.0, "all": [97.28813214615941, 95.63973424869718, 95.98289439648234]}
+round 1: 1024 tokens in 8.56s = 119.6 tok/s
+round 2: 1024 tokens in 8.70s = 117.7 tok/s
+round 3: 1024 tokens in 8.76s = 116.8 tok/s
+{"label": "cc-27B-v1", "engine": "llama", "k": 4, "n": 256, "median_agg_tps": 117.7, "all": [119.57053124592721, 117.710177214095, 116.83140966574896]}
+round 1: 1024 tokens in 10.53s = 97.3 tok/s
+round 2: 1024 tokens in 10.76s = 95.1 tok/s
+round 3: 1024 tokens in 10.77s = 95.1 tok/s
+{"label": "cc-27B-old", "engine": "llama", "k": 4, "n": 256, "median_agg_tps": 95.1, "all": [97.2545629893124, 95.14191801460994, 95.11938486570756]}

@@ -1,0 +1,28 @@
+17:03:23 MEM il-9B-v1 113444, 337 MiB 115860, 849 MiB 120097, 276 MiB 438520, 105 MiB 455062, 13932 MiB 
+17:04:18 MEM il-9B-old 113444, 338 MiB 115860, 745 MiB 120097, 209 MiB 438520, 204 MiB 458719, 13932 MiB 
+17:13:32 MEM il-27B-v1 115860, 488 MiB 120097, 277 MiB 471347, 21116 MiB 
+17:15:01 MEM il-27B-old 115860, 582 MiB 120097, 239 MiB 472972, 21050 MiB 476892, 152 MiB 
+17:28:43 MEM cc-9B-v1 115860, 355 MiB 120097, 239 MiB 476892, 83 MiB 481201, 38 MiB 502996, 13932 MiB 
+cc-9B-v1 0.01.620.133 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+17:30:14 MEM cc-9B-old 115860, 145 MiB 120097, 239 MiB 476892, 83 MiB 481201, 38 MiB 505040, 13932 MiB 
+cc-9B-old 0.01.572.926 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+17:31:40 MEM cc-9B-v1 115860, 143 MiB 120097, 239 MiB 476892, 83 MiB 481201, 38 MiB 506411, 13932 MiB 
+cc-9B-v1 0.01.549.800 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+17:33:11 MEM cc-9B-old 115860, 154 MiB 120097, 333 MiB 476892, 83 MiB 481201, 38 MiB 507786, 13932 MiB 
+cc-9B-old 0.01.566.043 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+17:35:11 MEM cc-27B-v1 115860, 565 MiB 120097, 280 MiB 476892, 83 MiB 481201, 38 MiB 509411, 21392 MiB 
+cc-27B-v1 0.03.352.058 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 79616, kv_unified = 'true'
+17:37:26 MEM cc-27B-old 115860, 563 MiB 120097, 244 MiB 476892, 83 MiB 481201, 38 MiB 513096, 20970 MiB 
+cc-27B-old 0.03.417.093 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 72960, kv_unified = 'true'
+17:39:29 MEM cc-27B-v1 115860, 531 MiB 120097, 244 MiB 476892, 83 MiB 481201, 38 MiB 515560, 21002 MiB 
+cc-27B-v1 0.03.240.235 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 73472, kv_unified = 'true'
+17:41:39 MEM cc-27B-old 115860, 531 MiB 120097, 252 MiB 476892, 83 MiB 481201, 38 MiB 517306, 21034 MiB 
+cc-27B-old 0.03.266.125 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 73984, kv_unified = 'true'
+18:43:10 MEM sp-9B-old-mtp 120097, 245 MiB 481201, 38 MiB 556958, 14 MiB 596171, 7116 MiB 
+18:44:06 MEM sp-9B-v1-nomtp 120097, 245 MiB 481201, 38 MiB 556958, 14 MiB 597218, 6416 MiB 
+18:45:01 MEM sp-9B-old-nomtp 120097, 245 MiB 481201, 38 MiB 556958, 14 MiB 598211, 6416 MiB 
+18:45:57 MEM sp-9B-v1-mtp 120097, 245 MiB 481201, 38 MiB 556958, 14 MiB 599204, 7150 MiB 
+19:01:58 MEM sp-27B-old-mtp 120097, 247 MiB 481201, 38 MiB 556958, 14 MiB 616089, 19530 MiB 
+19:03:24 MEM sp-27B-v1-nomtp 120097, 247 MiB 481201, 38 MiB 556958, 14 MiB 618251, 18048 MiB 
+19:04:54 MEM sp-27B-old-nomtp 120097, 247 MiB 481201, 38 MiB 556958, 14 MiB 619613, 18048 MiB 
+19:06:12 MEM sp-27B-v1-mtp 120097, 247 MiB 481201, 38 MiB 556958, 14 MiB 620954, 19538 MiB 

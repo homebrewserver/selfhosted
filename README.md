@@ -31,6 +31,7 @@ The GGUF files go in `ollama-vs-llamacpp/models/`; the other tests mount them fr
 | Folder | Test |
 |---|---|
 | `ollama-vs-llamacpp/` | Ollama vs llama.cpp: single-request speed, long prompt, 4 parallel requests, GPU memory |
+| `llama-cpp-v1/` | llama.cpp v1.0.0 vs build 12199: one request, 4 parallel requests, MTP speculative decoding, CPU only |
 | `lmstudio-vs-ollama/` | LM Studio vs Ollama, same models and prompts |
 | `vllm-vs-ollama/` | vLLM vs Ollama: speed, time to first token, 1–32 concurrent requests, start-up time, idle power |
 | `vllm-vs-llamacpp/` | vLLM vs llama.cpp `llama-server` at the same concurrency levels |
