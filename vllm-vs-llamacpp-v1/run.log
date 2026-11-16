@@ -1,0 +1,36 @@
+=== start 2026-11-16 14:48:01
+baseline VRAM before (desktop): 2913 MiB
+ollama loaded: 0 models
+version: 1.0.0-dev (build 12359, commit b1b770d90)
+built with GNU 14.2.0 for Linux x86_64
+v1 llama defaults: ready in 5.204111728 s; VRAM /app/llama-server, 13920 MiB; args: 
+{"label": "v1-llama-def-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 118.8, "tg_tps_med": 121.3, "ttft_ms_med": 104, "ttft_ms_max": 106, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "v1-llama-def-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 79.3, "tg_tps_med": 116.6, "ttft_ms_med": 1046, "ttft_ms_max": 1049, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+{"label": "v1-llama-def-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 305.7, "tg_tps_med": 84.0, "ttft_ms_med": 343, "ttft_ms_max": 370, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "v1-llama-def-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 319.1, "tg_tps_med": 87.2, "ttft_ms_med": 1896, "ttft_ms_max": 3547, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1-llama-def-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 305.2, "tg_tps_med": 84.9, "ttft_ms_med": 5257, "ttft_ms_max": 10394, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1-llama-def-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 298.7, "tg_tps_med": 82.0, "ttft_ms_med": 12280, "ttft_ms_max": 24394, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1-llama-def-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 131.9, "tg_tps_med": 48.3, "ttft_ms_med": 6976, "ttft_ms_max": 12365, "gen_tokens_med": 256.0, "prompt_tokens_med": 4122.0}
+v1 llama np32 c262144 kvu: ready in 2.861570818 s; VRAM /app/llama-server, 15452 MiB; args: -np 32 -c 262144 --kv-unified
+{"label": "v1-llama-np32-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 112.4, "tg_tps_med": 115.0, "ttft_ms_med": 111, "ttft_ms_max": 117, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "v1-llama-np32-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 77.2, "tg_tps_med": 113.7, "ttft_ms_med": 1071, "ttft_ms_max": 1074, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+{"label": "v1-llama-np32-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 315.5, "tg_tps_med": 86.9, "ttft_ms_med": 311, "ttft_ms_max": 323, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.5}
+{"label": "v1-llama-np32-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 478.1, "tg_tps_med": 69.1, "ttft_ms_med": 616, "ttft_ms_max": 632, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1-llama-np32-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 611.1, "tg_tps_med": 45.8, "ttft_ms_med": 1231, "ttft_ms_max": 1384, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "v1-llama-np32-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 662.1, "tg_tps_med": 25.9, "ttft_ms_med": 2553, "ttft_ms_max": 2679, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1-llama-np32-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 159.2, "tg_tps_med": 38.5, "ttft_ms_med": 5813, "ttft_ms_max": 8891, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.5}
+v1 llama np16 c131072 kvu: ready in 2.916377834 s; VRAM /app/llama-server, 10334 MiB; args: -np 16 -c 131072 --kv-unified
+{"label": "v1-llama-np16-k1-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 1, "rounds": 3, "agg_tps_med": 116.0, "tg_tps_med": 121.3, "ttft_ms_med": 105, "ttft_ms_max": 106, "gen_tokens_med": 256, "prompt_tokens_med": 71}
+{"label": "v1-llama-np16-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 322.9, "tg_tps_med": 89.2, "ttft_ms_med": 313, "ttft_ms_max": 323, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1-llama-np16-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 493.3, "tg_tps_med": 70.9, "ttft_ms_med": 552, "ttft_ms_max": 566, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1-llama-np16-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 619.5, "tg_tps_med": 46.8, "ttft_ms_med": 1164, "ttft_ms_max": 1192, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1-llama-np16-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 609.7, "tg_tps_med": 46.8, "ttft_ms_med": 4317, "ttft_ms_max": 8045, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+ghcr.io/ggml-org/llama.cpp:server-cuda-b12199
+b12199 llama defaults (same day): ready in 2.677929259 s; VRAM /app/llama-server, 13920 MiB; args: 
+{"label": "b12199-llama-def-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 111.7, "tg_tps_med": 114.2, "ttft_ms_med": 110, "ttft_ms_max": 112, "gen_tokens_med": 512, "prompt_tokens_med": 69}
+{"label": "b12199-llama-def-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 275.3, "tg_tps_med": 74.3, "ttft_ms_med": 301, "ttft_ms_max": 313, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+{"label": "b12199-llama-def-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 262.4, "tg_tps_med": 71.3, "ttft_ms_med": 13797, "ttft_ms_max": 29104, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+b12199 llama np32 (same day): ready in 2.585079101 s; VRAM /app/llama-server, 15452 MiB; args: -np 32 -c 262144 --kv-unified
+{"label": "b12199-llama-np32-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 344.0, "tg_tps_med": 47.6, "ttft_ms_med": 607, "ttft_ms_max": 615, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+{"label": "b12199-llama-np32-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 657.8, "tg_tps_med": 25.5, "ttft_ms_med": 2438, "ttft_ms_max": 2726, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+=== done 2026-11-16 15:31:25

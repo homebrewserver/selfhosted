@@ -35,6 +35,7 @@ The GGUF files go in `ollama-vs-llamacpp/models/`; the other tests mount them fr
 | `lmstudio-vs-ollama/` | LM Studio vs Ollama, same models and prompts |
 | `vllm-vs-ollama/` | vLLM vs Ollama: speed, time to first token, 1–32 concurrent requests, start-up time, idle power |
 | `vllm-vs-llamacpp/` | vLLM vs llama.cpp `llama-server` at the same concurrency levels |
+| `vllm-vs-llamacpp-v1/` | The llama.cpp runs from `vllm-vs-llamacpp/` repeated on v1.0.0 (`server-cuda-v1.0.0-b12359-b1b770d`), plus a same-day check on `server-cuda-b12199` |
 | `ollama-gpu/` | Ollama "not using GPU" cases: missing `--gpus`, `num_gpu`, large `num_ctx`, memory held by another server |
 | `ollama-hf/` | Running Hugging Face GGUF models in Ollama, with and without a Modelfile |
 | `ollama-remove/` | Uninstalling Ollama and deleting models |
@@ -78,7 +79,8 @@ and other one-off setup steps are described in each folder's setup log rather th
 
 ## Known gaps
 
-- The llama.cpp image tag is not pinned in the scripts; use build 12199 to match.
+- The llama.cpp image tag is not pinned in the older scripts; use build 12199 to match.
+  `llama-cpp-v1/` and `vllm-vs-llamacpp-v1/` pin their tags.
 - The vLLM AWQ model has no pinned revision.
 - Paths assume `~/homelab-tests`.
 - `bench.py` differs slightly between folders.
