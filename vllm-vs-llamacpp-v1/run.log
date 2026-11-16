@@ -34,3 +34,54 @@ b12199 llama np32 (same day): ready in 2.585079101 s; VRAM /app/llama-server, 15
 {"label": "b12199-llama-np32-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 344.0, "tg_tps_med": 47.6, "ttft_ms_med": 607, "ttft_ms_max": 615, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
 {"label": "b12199-llama-np32-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 657.8, "tg_tps_med": 25.5, "ttft_ms_med": 2438, "ttft_ms_max": 2726, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
 === done 2026-11-16 15:31:25
+=== vllm start 2026-11-16 16:09:12
+GPU free at 16:15:58; VRAM before (desktop): 3995 MiB
+vllm m06 seqs32: ready in 82.348025366 s; GPU KV cache size: 116,825 tokens Maximum concurrency for 32,768 tokens per request: 3.57x ; VRAM VLLM::EngineCore, 13246 MiB
+{"label": "v1day-vllm-k1-short", "engine": "vllm", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 107.7, "tg_tps_med": 108.8, "ttft_ms_med": 55, "ttft_ms_max": 60, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+{"label": "v1day-vllm-k1-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 75.3, "tg_tps_med": 107.1, "ttft_ms_med": 1017, "ttft_ms_max": 1055, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+{"label": "v1day-vllm-k4-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 381.1, "tg_tps_med": 99.8, "ttft_ms_med": 128, "ttft_ms_max": 135, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.0}
+{"label": "v1day-vllm-k8-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 736.8, "tg_tps_med": 98.6, "ttft_ms_med": 198, "ttft_ms_max": 199, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1day-vllm-k16-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 1224.3, "tg_tps_med": 85.0, "ttft_ms_med": 341, "ttft_ms_max": 342, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "v1day-vllm-k32-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 1661.0, "tg_tps_med": 58.5, "ttft_ms_med": 564, "ttft_ms_max": 634, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "v1day-vllm-k8-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 180.9, "tg_tps_med": 39.7, "ttft_ms_med": 5246, "ttft_ms_max": 8905, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+v1 llama defaults (after vllm): ready in 12.071659892 s; VRAM /app/llama-server, 13812 MiB; args: 
+{"label": "v1day-llama-def-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 113.5, "tg_tps_med": 116.1, "ttft_ms_med": 111, "ttft_ms_max": 115, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "v1day-llama-def-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 76.5, "tg_tps_med": 112.5, "ttft_ms_med": 1078, "ttft_ms_max": 1086, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+v1 llama np32 (after vllm): ready in 10.805423491 s; VRAM /app/llama-server, 13666 MiB; args: -np 32 -c 262144 --kv-unified
+=== stopped 16:48:03: Ollama (qwen3-embedding:4b) was loaded by another client during this run, so the v1day-* results are not used. All other containers were stopped before the next run.
+=== clean run start 2026-11-16 18:49:10
+VRAM before (desktop): 2540 MiB; GPU apps: []
+clean vllm m06 seqs32: ready in 71.610431645 s; GPU KV cache size: 110,176 tokens Maximum concurrency for 32,768 tokens per request: 3.36x ; VRAM VLLM::EngineCore, 13014 MiB
+{"label": "clean-vllm-k1-short", "engine": "vllm", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 113.9, "tg_tps_med": 115.3, "ttft_ms_med": 62, "ttft_ms_max": 78, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "clean-vllm-k1-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 78.4, "tg_tps_med": 112.5, "ttft_ms_med": 995, "ttft_ms_max": 1036, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+{"label": "clean-vllm-k4-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 397.6, "tg_tps_med": 104.5, "ttft_ms_med": 131, "ttft_ms_max": 172, "gen_tokens_med": 256.0, "prompt_tokens_med": 73.0}
+{"label": "clean-vllm-k8-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 771.1, "tg_tps_med": 103.4, "ttft_ms_med": 188, "ttft_ms_max": 206, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "clean-vllm-k16-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 1282.5, "tg_tps_med": 89.1, "ttft_ms_med": 328, "ttft_ms_max": 330, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "clean-vllm-k32-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 1730.0, "tg_tps_med": 61.1, "ttft_ms_med": 553, "ttft_ms_max": 616, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "clean-vllm-k8-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 191.0, "tg_tps_med": 45.3, "ttft_ms_med": 4983, "ttft_ms_max": 7932, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+clean v1 llama defaults: ready in 4.627814692 s; VRAM /app/llama-server, 13920 MiB; args: 
+{"label": "clean-llama-def-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 117.7, "tg_tps_med": 121.6, "ttft_ms_med": 144, "ttft_ms_max": 158, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "clean-llama-def-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 80.6, "tg_tps_med": 119.1, "ttft_ms_med": 1040, "ttft_ms_max": 1060, "gen_tokens_med": 256, "prompt_tokens_med": 4122}
+{"label": "clean-llama-def-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 332.1, "tg_tps_med": 91.5, "ttft_ms_med": 297, "ttft_ms_max": 298, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+{"label": "clean-llama-def-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 329.5, "tg_tps_med": 91.3, "ttft_ms_med": 1824, "ttft_ms_max": 3419, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.5}
+{"label": "clean-llama-def-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 327.2, "tg_tps_med": 90.5, "ttft_ms_med": 4963, "ttft_ms_max": 9743, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "clean-llama-def-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 322.9, "tg_tps_med": 89.6, "ttft_ms_med": 11401, "ttft_ms_max": 22545, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "clean-llama-def-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 140.0, "tg_tps_med": 51.3, "ttft_ms_med": 6653, "ttft_ms_max": 11722, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+clean v1 llama np32 c262144 kvu: ready in 2.336138482 s; VRAM /app/llama-server, 15452 MiB; args: -np 32 -c 262144 --kv-unified
+{"label": "clean-llama-np32-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 117.8, "tg_tps_med": 121.3, "ttft_ms_med": 136, "ttft_ms_max": 143, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "clean-llama-np32-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 80.3, "tg_tps_med": 119.3, "ttft_ms_med": 1049, "ttft_ms_max": 1053, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+{"label": "clean-llama-np32-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 330.3, "tg_tps_med": 91.4, "ttft_ms_med": 314, "ttft_ms_max": 330, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "clean-llama-np32-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 497.5, "tg_tps_med": 72.2, "ttft_ms_med": 598, "ttft_ms_max": 608, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "clean-llama-np32-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 630.5, "tg_tps_med": 47.9, "ttft_ms_med": 1170, "ttft_ms_max": 1370, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "clean-llama-np32-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 679.4, "tg_tps_med": 26.7, "ttft_ms_med": 2473, "ttft_ms_max": 2675, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "clean-llama-np32-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 162.8, "tg_tps_med": 39.6, "ttft_ms_med": 5777, "ttft_ms_max": 8753, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.5}
+=== clean run done 2026-11-16 19:25:41
+clean v1 llama np16 c131072 kvu: ready in 2.473012109 s; VRAM /app/llama-server, 10334 MiB; args: -np 16 -c 131072 --kv-unified
+{"label": "clean-llama-np16-k1-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 1, "rounds": 3, "agg_tps_med": 115.9, "tg_tps_med": 121.1, "ttft_ms_med": 104, "ttft_ms_max": 157, "gen_tokens_med": 256, "prompt_tokens_med": 70}
+clean v1 llama np16 c131072 kvu: ready in 4.787767190 s; VRAM /app/llama-server, 10334 MiB; args: -np 16 -c 131072 --kv-unified
+{"label": "clean-llama-np16-k1-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 1, "rounds": 3, "agg_tps_med": 117.3, "tg_tps_med": 122.0, "ttft_ms_med": 90, "ttft_ms_max": 98, "gen_tokens_med": 256, "prompt_tokens_med": 72}
+{"label": "clean-llama-np16-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 332.6, "tg_tps_med": 91.9, "ttft_ms_med": 296, "ttft_ms_max": 311, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "clean-llama-np16-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 498.0, "tg_tps_med": 71.9, "ttft_ms_med": 546, "ttft_ms_max": 576, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "clean-llama-np16-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 635.6, "tg_tps_med": 47.4, "ttft_ms_med": 1055, "ttft_ms_max": 1063, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "clean-llama-np16-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 617.3, "tg_tps_med": 46.5, "ttft_ms_med": 4260, "ttft_ms_max": 7843, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+=== clean np16 done 2026-11-16 19:40:38
