@@ -36,6 +36,7 @@ The GGUF files go in `ollama-vs-llamacpp/models/`; the other tests mount them fr
 | `vllm-vs-ollama/` | vLLM vs Ollama: speed, time to first token, 1–32 concurrent requests, start-up time, idle power |
 | `vllm-vs-llamacpp/` | vLLM vs llama.cpp `llama-server` at the same concurrency levels |
 | `vllm-vs-llamacpp-v1/` | The llama.cpp runs from `vllm-vs-llamacpp/` repeated on v1.0.0 (`server-cuda-v1.0.0-b12359-b1b770d`), plus a same-day check on `server-cuda-b12199` |
+| `qwen38-four-engines/` | Ollama 0.40.15, llama.cpp v1.0.0, LM Studio (runtime 2.79.0) and vLLM 0.33.0 with Qwen3.8-27B: 1 to 32 requests, 8 long prompts at once, MTP speculative decoding, GPU memory, start-up. Results summary in `summary.md` |
 | `ollama-gpu/` | Ollama "not using GPU" cases: missing `--gpus`, `num_gpu`, large `num_ctx`, memory held by another server |
 | `ollama-hf/` | Running Hugging Face GGUF models in Ollama, with and without a Modelfile |
 | `ollama-remove/` | Uninstalling Ollama and deleting models |

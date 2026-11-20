@@ -1,0 +1,90 @@
+=== run start 2026-11-20 11:51:10
+running containers: 
+VRAM before (desktop): 1166 MiB; GPU apps: [/usr/bin/ptyxis, 63 MiB;]
+llama.cpp defaults: ready in 4.000031567 s; VRAM /app/llama-server, 22030 MiB;; args: 
+{"label": "llama-def-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.9, "tg_tps_med": 43.8, "ttft_ms_med": 269, "ttft_ms_max": 291, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "llama-def-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 28.6, "tg_tps_med": 43.0, "ttft_ms_med": 3018, "ttft_ms_max": 3046, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+{"label": "llama-def-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 122.1, "tg_tps_med": 33.8, "ttft_ms_med": 831, "ttft_ms_max": 908, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-def-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 121.4, "tg_tps_med": 33.5, "ttft_ms_med": 5011, "ttft_ms_max": 9352, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-def-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 119.8, "tg_tps_med": 33.2, "ttft_ms_med": 13495, "ttft_ms_max": 26506, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-def-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 117.9, "tg_tps_med": 32.5, "ttft_ms_med": 30844, "ttft_ms_max": 61582, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-def-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 48.3, "tg_tps_med": 18.0, "ttft_ms_med": 19777, "ttft_ms_max": 34461, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+llama.cpp np32 c49152 kvu: ready in 5.730622227 s; VRAM /app/llama-server, 21784 MiB;; args: -np 32 -c 49152 --kv-unified
+{"label": "llama-np32-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 11.4, "tg_tps_med": 11.5, "ttft_ms_med": 530, "ttft_ms_max": 583, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+=== run start 2026-11-20 12:19:55
+running containers: 
+VRAM before (desktop): 1051 MiB; GPU apps: [/usr/bin/ptyxis, 63 MiB;]
+llama.cpp np32 c32768 kvu fit-off: ready in 3.687130304 s; VRAM /app/llama-server, 22238 MiB;; args: -np 32 -c 32768 --kv-unified -ngl all --fit off
+{"label": "llama-np32-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.7, "tg_tps_med": 43.7, "ttft_ms_med": 278, "ttft_ms_max": 295, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+{"label": "llama-np32-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 28.5, "tg_tps_med": 42.9, "ttft_ms_med": 3034, "ttft_ms_max": 3067, "gen_tokens_med": 256, "prompt_tokens_med": 4122}
+{"label": "llama-np32-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 121.4, "tg_tps_med": 33.7, "ttft_ms_med": 857, "ttft_ms_max": 927, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.5}
+{"label": "llama-np32-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 194.8, "tg_tps_med": 28.8, "ttft_ms_med": 1676, "ttft_ms_max": 1682, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+{"label": "llama-np32-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 264.2, "tg_tps_med": 20.9, "ttft_ms_med": 3304, "ttft_ms_max": 3375, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "llama-np32-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 295.4, "tg_tps_med": 12.1, "ttft_ms_med": 6586, "ttft_ms_max": 6902, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "llama-np32-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 0.0, "tg_tps_med": -0.1, "ttft_ms_med": 15018, "ttft_ms_max": 24719, "gen_tokens_med": 0, "prompt_tokens_med": 0}
+ollama defaults: API up 88.429 s (api 5.457 s), first answer 88.433456356 s, load_duration 32.14 s; VRAM /usr/lib/ollama/llama-server, 17456 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    17 GB    100% GPU     32768      llamacpp    4 minutes from now    ; env: 
+{"label": "ollama-def-k1-short", "engine": "ollama", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.1, "tg_tps_med": 43.5, "ttft_ms_med": 392, "ttft_ms_max": 426, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+{"label": "ollama-def-k1-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 27.8, "tg_tps_med": 42.8, "ttft_ms_med": 3261, "ttft_ms_max": 3315, "gen_tokens_med": 256, "prompt_tokens_med": 4122}
+{"label": "ollama-def-k4-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 41.0, "tg_tps_med": 43.3, "ttft_ms_med": 9706, "ttft_ms_max": 19091, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.0}
+{"label": "ollama-def-k8-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 40.6, "tg_tps_med": 43.0, "ttft_ms_med": 22286, "ttft_ms_max": 44456, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "ollama-def-k16-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 39.7, "tg_tps_med": 42.3, "ttft_ms_med": 47622, "ttft_ms_max": 97275, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "ollama-def-k32-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 38.1, "tg_tps_med": 39.3, "ttft_ms_med": 100565, "ttft_ms_max": 208994, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "ollama-def-k8-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 26.6, "tg_tps_med": 42.3, "ttft_ms_med": 36818, "ttft_ms_max": 70797, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+ollama NUM_PARALLEL=4 CONTEXT_LENGTH=8192: API up 85.683 s (api 3.989 s), first answer 85.687133477 s, load_duration 30.78 s; VRAM /usr/lib/ollama/llama-server, 17882 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    18 GB    100% GPU     8192       llamacpp    4 minutes from now    ; env: -e OLLAMA_NUM_PARALLEL=4 -e OLLAMA_CONTEXT_LENGTH=8192
+{"label": "ollama-np4-k1-short", "engine": "ollama", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.2, "tg_tps_med": 43.5, "ttft_ms_med": 381, "ttft_ms_max": 402, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "ollama-np4-k1-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 27.8, "tg_tps_med": 42.8, "ttft_ms_med": 3247, "ttft_ms_max": 3269, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+{"label": "ollama-np4-k4-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 100.6, "tg_tps_med": 29.3, "ttft_ms_med": 1416, "ttft_ms_max": 1489, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.0}
+{"label": "ollama-np4-k8-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 100.3, "tg_tps_med": 29.0, "ttft_ms_med": 6250, "ttft_ms_max": 11723, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "ollama-np4-k16-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 98.4, "tg_tps_med": 28.4, "ttft_ms_med": 16688, "ttft_ms_max": 32617, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "ollama-np4-k32-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 96.3, "tg_tps_med": 27.8, "ttft_ms_med": 37638, "ttft_ms_max": 75926, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "ollama-np4-k8-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 41.3, "tg_tps_med": 13.9, "ttft_ms_med": 21246, "ttft_ms_max": 40246, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+lm studio defaults: container+API 3.912 s, lms load 4.351524980 s; VRAM /root/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.79.0/llama-server, 18678 MiB;; args: 
+{"label": "lms-def-k1-short", "engine": "lms", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 63.5, "tg_tps_med": 65.8, "ttft_ms_med": 267, "ttft_ms_max": 302, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "lms-def-k1-long", "engine": "lms", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 36.0, "tg_tps_med": 76.6, "ttft_ms_med": 3790, "ttft_ms_max": 3817, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+{"label": "lms-def-k4-short", "engine": "lms", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 143.2, "tg_tps_med": 41.6, "ttft_ms_med": 882, "ttft_ms_max": 1029, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "lms-def-k8-short", "engine": "lms", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 143.0, "tg_tps_med": 40.1, "ttft_ms_med": 4110, "ttft_ms_max": 8536, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+{"label": "lms-def-k16-short", "engine": "lms", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 142.5, "tg_tps_med": 39.3, "ttft_ms_med": 11111, "ttft_ms_max": 23007, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "lms-def-k32-short", "engine": "lms", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 138.9, "tg_tps_med": 37.3, "ttft_ms_med": 26381, "ttft_ms_max": 53502, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "lms-def-k8-long", "engine": "lms", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 0.0, "tg_tps_med": 0.0, "ttft_ms_med": 11214, "ttft_ms_max": 15225, "gen_tokens_med": 0.0, "prompt_tokens_med": 0.0}
+vllm cold (empty compile cache): DIED
+ValueError: max_num_seqs (32) exceeds available Mamba cache blocks (21). Each decode sequence requires one Mamba cache block, so CUDA graph capture cannot proceed. Please lower max_num_seqs to at most 21 or increase gpu_memory_utilization.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+vllm warm (compile cache present): ready in 46.381617110 s; Model loading took 18.28 GiB GPU KV cache size: 30,840 tokens Maximum concurrency for 8,192 tokens per request: 3.76x ; VRAM VLLM::EngineCore, 22480 MiB;; args: --max-model-len 8192 --gpu-memory-utilization 0.93 --max-num-seqs 32 --max-cudagraph-capture-size 32
+{"label": "vllm-k1-short", "engine": "vllm", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 43.1, "tg_tps_med": 43.5, "ttft_ms_med": 115, "ttft_ms_max": 130, "gen_tokens_med": 512, "prompt_tokens_med": 73}
+{"label": "vllm-k1-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 27.5, "tg_tps_med": 42.7, "ttft_ms_med": 3349, "ttft_ms_max": 3399, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+{"label": "vllm-k4-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 150.6, "tg_tps_med": 39.3, "ttft_ms_med": 300, "ttft_ms_max": 304, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.0}
+{"label": "vllm-k8-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 287.9, "tg_tps_med": 38.7, "ttft_ms_med": 522, "ttft_ms_max": 579, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "vllm-k16-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 282.8, "tg_tps_med": 33.2, "ttft_ms_med": 917, "ttft_ms_max": 8655, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "vllm-k32-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 345.8, "tg_tps_med": 33.2, "ttft_ms_med": 9276, "ttft_ms_max": 17369, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "vllm-k8-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 47.5, "tg_tps_med": 14.0, "ttft_ms_med": 18104, "ttft_ms_max": 36611, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.5}
+=== run done 2026-11-20 14:16:41
+=== mtp run start 2026-11-20 14:16:56
+llama.cpp LM Studio flags + MTP: ready in 8.455450109 s; VRAM /app/llama-server, 18678 MiB;; args: -c 8192 -np 4 --kv-unified -b 2048 -ub 512 -ngl all --fit off --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-n-min 0 --spec-draft-p-min 0
+{"label": "llama-lmsflags-mtp-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 68.5, "tg_tps_med": 70.9, "ttft_ms_med": 270, "ttft_ms_max": 300, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "llama-lmsflags-mtp-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 40.0, "tg_tps_med": 78.1, "ttft_ms_med": 3102, "ttft_ms_max": 3155, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+{"label": "llama-lmsflags-mtp-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 164.7, "tg_tps_med": 48.6, "ttft_ms_med": 857, "ttft_ms_max": 970, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-lmsflags-mtp-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 164.4, "tg_tps_med": 46.2, "ttft_ms_med": 3470, "ttft_ms_max": 7290, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.5}
+{"label": "llama-lmsflags-mtp-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 162.2, "tg_tps_med": 44.1, "ttft_ms_med": 9787, "ttft_ms_max": 20208, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-lmsflags-mtp-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 160.1, "tg_tps_med": 42.6, "ttft_ms_med": 19764, "ttft_ms_max": 45806, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+llama.cpp LM Studio flags, no MTP: ready in 43.999665678 s; VRAM /app/llama-server, 16342 MiB;; args: -c 8192 -np 4 --kv-unified -b 2048 -ub 512 -ngl all --fit off
+{"label": "llama-lmsflags-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.8, "tg_tps_med": 43.7, "ttft_ms_med": 260, "ttft_ms_max": 272, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "llama-lmsflags-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 28.6, "tg_tps_med": 43.0, "ttft_ms_med": 3020, "ttft_ms_max": 3083, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+{"label": "llama-lmsflags-k4-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 122.5, "tg_tps_med": 33.8, "ttft_ms_med": 814, "ttft_ms_max": 839, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.0}
+{"label": "llama-lmsflags-k8-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 120.5, "tg_tps_med": 33.6, "ttft_ms_med": 5001, "ttft_ms_max": 9416, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-lmsflags-k16-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 120.0, "tg_tps_med": 33.2, "ttft_ms_med": 13444, "ttft_ms_max": 26426, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-lmsflags-k32-short", "engine": "llamacpp", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 118.2, "tg_tps_med": 32.7, "ttft_ms_med": 30858, "ttft_ms_max": 61436, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "llama-lmsflags-k8-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 0.0, "tg_tps_med": 0.0, "ttft_ms_med": 8854, "ttft_ms_max": 12100, "gen_tokens_med": 0.0, "prompt_tokens_med": 0.0}
+=== mtp run done 2026-11-20 14:52:05
+=== vllm cold + mtp run start 2026-11-20 14:52:19
+vllm seqs16 cold (empty compile cache): ready in 155.114478560 s; Model loading took 18.28 GiB GPU KV cache size: 10,601 tokens Maximum concurrency for 8,192 tokens per request: 1.29x ; VRAM VLLM::EngineCore, 20352 MiB;; args: --max-model-len 8192 --gpu-memory-utilization 0.93 --max-num-seqs 16 --max-cudagraph-capture-size 16
+vllm MTP3 seqs32 (try 1): DIED
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.37 GiB. GPU 0 has a total capacity of 23.61 GiB of which 805.50 MiB is free. Including non-PyTorch memory, this process has 21.85 GiB memory in use. Of the allocated memory 21.46 GiB is allocated by PyTorch, and 54.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+vllm MTP3 seqs32 (try 2, compile cache present): DIED
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.37 GiB. GPU 0 has a total capacity of 23.61 GiB of which 779.94 MiB is free. Including non-PyTorch memory, this process has 21.85 GiB memory in use. Of the allocated memory 21.46 GiB is allocated by PyTorch, and 54.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+vllm MTP3 seqs16 (try 1): DIED
+Error response from daemon: No such container: bench-vllm
