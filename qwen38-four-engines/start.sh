@@ -20,7 +20,7 @@ case $E in
     docker run -d --name bench-ollama-q38 --gpus all -p 127.0.0.1:11435:11434 "$@" -v $PWD/ollama-data:/root/.ollama \
       -v $GGUF_DIR:/gguf:ro ollama/ollama:0.40.15 >/dev/null
     until curl -sf 127.0.0.1:11435/api/version >/dev/null; do sleep 0.3; done; t1=$(date +%s.%N)
-    ld=$(curl -s 127.0.0.1:11435/api/generate -d '{"model":"qwen38-27b","prompt":"hi","stream":false,"think":false,"options":{"num_predict":1}}' | /usr/bin/python3 -c 'import sys,json;print(round(json.load(sys.stdin)["load_duration"]/1e9,2))')
+    ld=$(curl -s 127.0.0.1:11435/api/generate -d '{"model":"'"${OM:-qwen38-27b}"'","prompt":"hi","stream":false,"think":false,"options":{"num_predict":1}}' | /usr/bin/python3 -c 'import sys,json;print(round(json.load(sys.stdin)["load_duration"]/1e9,2))')
     echo "$L: API up $(echo "$(date +%s.%N)-$t0" | bc | cut -c1-6) s (api $(echo "$t1-$t0"|bc|cut -c1-5) s), first answer $(echo "$(date +%s.%N)-$t0" | bc) s, load_duration $ld s; VRAM $(vram); ps: $(docker exec bench-ollama-q38 ollama ps | tail -1); env: $*" | tee -a setup-log.md
     docker logs bench-ollama-q38 2>&1 | grep -o 'llama-server --model.*' | head -1 | cut -c1-300 >> setup-log.md ;;
   lms)

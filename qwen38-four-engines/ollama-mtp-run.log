@@ -1,0 +1,10 @@
+=== ollama mtp run start 2026-11-20 17:26:17
+ollama defaults, qwen3.8:27b-mtp-q4_K_M: API up 58.986 s (api 4.027 s), first answer 58.990287154 s, load_duration 31.46 s; VRAM /usr/lib/ollama/llama-server, 20010 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    17 GB    100% GPU     32768      llamacpp    4 minutes from now    ; env: 
+{"label": "ollama-mtp-k1-short", "engine": "ollama", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 54.6, "tg_tps_med": 57.1, "ttft_ms_med": 429, "ttft_ms_max": 440, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "ollama-mtp-k1-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 34.1, "tg_tps_med": 65.0, "ttft_ms_med": 3626, "ttft_ms_max": 3658, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+{"label": "ollama-mtp-k4-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 53.2, "tg_tps_med": 57.4, "ttft_ms_med": 7554, "ttft_ms_max": 15209, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "ollama-mtp-k8-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 51.9, "tg_tps_med": 56.2, "ttft_ms_med": 17582, "ttft_ms_max": 35900, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "ollama-mtp-k16-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 51.3, "tg_tps_med": 55.1, "ttft_ms_med": 37429, "ttft_ms_max": 77272, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "ollama-mtp-k32-short", "engine": "ollama", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 49.3, "tg_tps_med": 53.1, "ttft_ms_med": 79379, "ttft_ms_max": 162205, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "ollama-mtp-k8-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 31.6, "tg_tps_med": 62.3, "ttft_ms_med": 32057, "ttft_ms_max": 61194, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.5}
+=== ollama mtp run done 2026-11-20 17:57:58

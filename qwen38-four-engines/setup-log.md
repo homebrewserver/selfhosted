@@ -125,3 +125,21 @@ Error response from daemon: No such container: bench-vllm
 llama.cpp LM Studio flags + MTP (crash repeat): ready in 3.663093476 s; VRAM /app/llama-server, 18678 MiB;; args: -c 8192 -np 4 --kv-unified -b 2048 -ub 512 -ngl all --fit off --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-n-min 0 --spec-draft-p-min 0
 0.03.049.432 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 8192, kv_unified = 'true'
 NOTE crash reproduced 15:00:53: llama.cpp v1.0 b12359 with --spec-type draft-mtp aborts at the first request after the k32 test: '/app/common/common.cpp:1634: failed to remove sequence 0 with p0=76, p1=-1' right after 'making room for prompt cache entry' on slot reuse (log: llama-mtp-repeat.log). k32 repeat row: 159.6 tok/s (first run 160.1). k8-long with MTP got no result (server down). LM Studio runtime 2.79.0 (b12521) with the same flags did not crash in the same sequence. === all runs done
+=== Ollama MTP check 2026-11-20 17:24:58
+ollama defaults, qwen3.8:27b-mtp-q4_K_M: API up 60.480 s (api 5.238 s), first answer 60.492024400 s, load_duration 31.45 s; VRAM /usr/lib/ollama/llama-server, 20010 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    17 GB    100% GPU     32768      llamacpp    4 minutes from now    ; env: 
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 36581 --host 127.0.0.1 --no-webui --offline -c 32768 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mod
+=== ollama mtp run start 2026-11-20 17:26:17
+ollama defaults, qwen3.8:27b-mtp-q4_K_M: API up 58.986 s (api 4.027 s), first answer 58.990287154 s, load_duration 31.46 s; VRAM /usr/lib/ollama/llama-server, 20010 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    17 GB    100% GPU     32768      llamacpp    4 minutes from now    ; env: 
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 35029 --host 127.0.0.1 --no-webui --offline -c 32768 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mod
+  after ollama-mtp-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 20070 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-mtp-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 20070 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-mtp-k4-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 20070 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-mtp-k8-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 20070 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-mtp-k16-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 20070 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-mtp-k32-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 20070 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-mtp-k8-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 20070 MiB;]; containers [bench-ollama-q38 ]
+slot print_timing: id  0 | task 22488 | draft acceptance = 0.45429 (  164 accepted /   361 generated), mean len =  2.80
+slot print_timing: id  0 | task 22590 | draft acceptance = 0.50445 (  170 accepted /   337 generated), mean len =  3.00
+slot print_timing: id  0 | task 22686 | draft acceptance = 0.52744 (  173 accepted /   328 generated), mean len =  3.11
+spec common_specu: statistics        draft-mtp: #calls(b,g,a) =  222  21793  21793, #gen drafts =  21793, #acc drafts = 16878, #gen tokens =  86860, #acc tokens = 36026, #mean acc len = 2.65, #acc rate/pos = (0.774, 0.453, 0.276, 0.150), dur(b,g,a) = 0.869, 160847.026, 17.031 ms
+=== ollama mtp run done 2026-11-20 17:57:58
