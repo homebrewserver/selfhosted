@@ -143,3 +143,206 @@ slot print_timing: id  0 | task 22590 | draft acceptance = 0.50445 (  170 accept
 slot print_timing: id  0 | task 22686 | draft acceptance = 0.52744 (  173 accepted /   328 generated), mean len =  3.11
 spec common_specu: statistics        draft-mtp: #calls(b,g,a) =  222  21793  21793, #gen drafts =  21793, #acc drafts = 16878, #gen tokens =  86860, #acc tokens = 36026, #mean acc len = 2.65, #acc rate/pos = (0.774, 0.453, 0.276, 0.150), dur(b,g,a) = 0.869, 160847.026, 17.031 ms
 === ollama mtp run done 2026-11-20 17:57:58
+CTX === context runs start 2026-11-20 22:36:09; desktop VRAM 1397 MiB
+llama.cpp c32768 : ready in 182.980895043 s; VRAM /app/llama-server, 17902 MiB;; args: -c 32768 -ngl all --fit off
+3.01.907.877 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+CTX llama.cpp at 32768: fits
+  after llama-c32k-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 17916 MiB;]; containers [bench-llama ]
+  after llama-c32k-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 17918 MiB;]; containers [bench-llama ]
+llama.cpp c32768 --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-n-min 0 --spec-draft-p-min 0: ready in 2.889646996 s; VRAM /app/llama-server, 20334 MiB;; args: -c 32768 -ngl all --fit off --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-n-min 0 --spec-draft-p-min 0
+0.02.362.037 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+CTX llama.cpp MTP at 32768: fits
+  after llama-mtp-c32k-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 20406 MiB;]; containers [bench-llama ]
+  after llama-mtp-c32k-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 20408 MiB;]; containers [bench-llama ]
+lm studio c32768 gpu max: container+API 4.829 s, lms load 5.487570430 s; VRAM /root/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.79.0/llama-server, 20334 MiB;; args: --gpu max -c 32768
+qwen3.8-27b    qwen3.8-27b    IDLE      16.56 GB    32768      4           Local        
+CTX LM Studio at 32768: fits
+  after lms-c32k-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/root/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.79.0/llama-server, 20374 MiB;]; containers [bench-lms-q38 ]
+  after lms-c32k-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/root/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.79.0/llama-server, 20376 MiB;]; containers [bench-lms-q38 ]
+llama.cpp c98304 : ready in 7.257603264 s; VRAM /app/llama-server, 22062 MiB;; args: -c 98304 -ngl all --fit off
+0.06.843.421 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 98304, kv_unified = 'true'
+CTX llama.cpp at 98304: fits
+  after llama-c96k-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 22076 MiB;]; containers [bench-llama ]
+  after llama-c96k-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 22078 MiB;]; containers [bench-llama ]
+CTX llama.cpp MTP at 98304: does not fit
+ollama qwen38-27b ctx 98304: API up 94.704 s (api 4.929 s), first answer 94.708570608 s, load_duration 39.0 s; VRAM /usr/lib/ollama/llama-server, 21616 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    22 GB    100% GPU     98304      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=98304
+llama-server --model /root/.ollama/models/blobs/sha256-1bce504dfecd84153666928a41d8a66706f0158d3a317bc5196b72819d7dc529 --port 40853 --host 127.0.0.1 --no-webui --offline -c 98304 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+  ollama ps: qwen38-27b:latest    a2a82f1561c9    22 GB    100% GPU     98304      llamacpp    4 minutes from now    
+CTX Ollama at 98304: fits
+  after ollama-c96k-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 21626 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-c96k-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 21628 MiB;]; containers [bench-ollama-q38 ]
+ollama qwen3.8:27b-mtp-q4_K_M ctx 98304: API up 70.331 s (api 4.809 s), first answer 70.336679939 s, load_duration 41.58 s; VRAM /usr/lib/ollama/llama-server, 22048 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    19 GB    19%/81% CPU/GPU    98304      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=98304
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 39963 --host 127.0.0.1 --no-webui --offline -c 98304 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mod
+  ollama ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    19 GB    19%/81% CPU/GPU    98304      llamacpp    4 minutes from now    
+CTX Ollama MTP at 98304: does not fit
+lm studio c98304 gpu max: container+API 4.960 s, lms load 148.071829408 s; VRAM ; args: --gpu max -c 98304
+CTX LM Studio at 98304: does not fit
+CTX llama.cpp: 131072 does not fit
+CTX llama.cpp: 114688 does not fit
+llama.cpp c98304 : ready in 2.654069401 s; VRAM /app/llama-server, 22062 MiB;; args: -c 98304 -ngl all --fit off
+0.02.158.051 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 98304, kv_unified = 'true'
+CTX llama.cpp: 110592 does not fit
+llama.cpp c106496 : ready in 2.669403289 s; VRAM /app/llama-server, 22582 MiB;; args: -c 106496 -ngl all --fit off
+0.02.155.821 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 106496, kv_unified = 'true'
+CTX llama.cpp: max 106496
+  after llama-cmax-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 22594 MiB;]; containers [bench-llama ]
+  after llama-cmax-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 22596 MiB;]; containers [bench-llama ]
+CTX llama.cpp MTP: 131072 does not fit
+CTX llama.cpp MTP: 114688 does not fit
+CTX llama.cpp MTP: 98304 does not fit
+CTX llama.cpp MTP: 81920 does not fit
+llama.cpp c65536 --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-n-min 0 --spec-draft-p-min 0: ready in 2.702086841 s; VRAM /app/llama-server, 22544 MiB;; args: -c 65536 -ngl all --fit off --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-n-min 0 --spec-draft-p-min 0
+0.02.155.896 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 65536, kv_unified = 'true'
+CTX llama.cpp MTP: 77824 does not fit
+CTX llama.cpp MTP: 73728 does not fit
+CTX llama.cpp MTP: 69632 does not fit
+llama.cpp c65536 --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-n-min 0 --spec-draft-p-min 0: ready in 2.743007529 s; VRAM /app/llama-server, 22544 MiB;; args: -c 65536 -ngl all --fit off --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-n-min 0 --spec-draft-p-min 0
+0.02.165.839 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 65536, kv_unified = 'true'
+CTX llama.cpp MTP: max 65536
+  after llama-mtp-cmax-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 22616 MiB;]; containers [bench-llama ]
+  after llama-mtp-cmax-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/app/llama-server, 22618 MiB;]; containers [bench-llama ]
+ollama qwen38-27b ctx 131072: API up 91.456 s (api 5.043 s), first answer 91.460544362 s, load_duration 35.54 s; VRAM /usr/lib/ollama/llama-server, 21462 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    25 GB    14%/86% CPU/GPU    131072     llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=131072
+llama-server --model /root/.ollama/models/blobs/sha256-1bce504dfecd84153666928a41d8a66706f0158d3a317bc5196b72819d7dc529 --port 40853 --host 127.0.0.1 --no-webui --offline -c 131072 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+  ollama ps: qwen38-27b:latest    a2a82f1561c9    25 GB    14%/86% CPU/GPU    131072     llamacpp    4 minutes from now    
+CTX Ollama: 131072 does not fit
+ollama qwen38-27b ctx 114688: API up 85.806 s (api 3.882 s), first answer 85.810053004 s, load_duration 31.48 s; VRAM /usr/lib/ollama/llama-server, 21778 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    24 GB    9%/91% CPU/GPU    114688     llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=114688
+llama-server --model /root/.ollama/models/blobs/sha256-1bce504dfecd84153666928a41d8a66706f0158d3a317bc5196b72819d7dc529 --port 36093 --host 127.0.0.1 --no-webui --offline -c 114688 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+  ollama ps: qwen38-27b:latest    a2a82f1561c9    24 GB    9%/91% CPU/GPU    114688     llamacpp    4 minutes from now    
+CTX Ollama: 114688 does not fit
+ollama qwen38-27b ctx 98304: API up 84.751 s (api 3.987 s), first answer 84.755486272 s, load_duration 30.34 s; VRAM /usr/lib/ollama/llama-server, 21616 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    22 GB    100% GPU     98304      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=98304
+llama-server --model /root/.ollama/models/blobs/sha256-1bce504dfecd84153666928a41d8a66706f0158d3a317bc5196b72819d7dc529 --port 38149 --host 127.0.0.1 --no-webui --offline -c 98304 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+  ollama ps: qwen38-27b:latest    a2a82f1561c9    22 GB    100% GPU     98304      llamacpp    4 minutes from now    
+ollama qwen38-27b ctx 110592: API up 85.196 s (api 3.788 s), first answer 85.200626333 s, load_duration 30.94 s; VRAM /usr/lib/ollama/llama-server, 21792 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    24 GB    6%/94% CPU/GPU    110592     llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=110592
+llama-server --model /root/.ollama/models/blobs/sha256-1bce504dfecd84153666928a41d8a66706f0158d3a317bc5196b72819d7dc529 --port 41579 --host 127.0.0.1 --no-webui --offline -c 110592 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+  ollama ps: qwen38-27b:latest    a2a82f1561c9    24 GB    6%/94% CPU/GPU    110592     llamacpp    4 minutes from now    
+CTX Ollama: 110592 does not fit
+ollama qwen38-27b ctx 106496: API up 85.148 s (api 3.975 s), first answer 85.151926325 s, load_duration 30.83 s; VRAM /usr/lib/ollama/llama-server, 21740 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    23 GB    5%/95% CPU/GPU    106496     llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=106496
+llama-server --model /root/.ollama/models/blobs/sha256-1bce504dfecd84153666928a41d8a66706f0158d3a317bc5196b72819d7dc529 --port 37073 --host 127.0.0.1 --no-webui --offline -c 106496 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+  ollama ps: qwen38-27b:latest    a2a82f1561c9    23 GB    5%/95% CPU/GPU    106496     llamacpp    4 minutes from now    
+CTX Ollama: 106496 does not fit
+ollama qwen38-27b ctx 102400: API up 85.137 s (api 3.993 s), first answer 85.140984820 s, load_duration 30.67 s; VRAM /usr/lib/ollama/llama-server, 21690 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    23 GB    5%/95% CPU/GPU    102400     llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=102400
+llama-server --model /root/.ollama/models/blobs/sha256-1bce504dfecd84153666928a41d8a66706f0158d3a317bc5196b72819d7dc529 --port 41827 --host 127.0.0.1 --no-webui --offline -c 102400 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+  ollama ps: qwen38-27b:latest    a2a82f1561c9    23 GB    5%/95% CPU/GPU    102400     llamacpp    4 minutes from now    
+CTX Ollama: 102400 does not fit
+ollama qwen38-27b ctx 98304: API up 84.570 s (api 3.874 s), first answer 84.574468501 s, load_duration 30.28 s; VRAM /usr/lib/ollama/llama-server, 21616 MiB;; ps: qwen38-27b:latest    a2a82f1561c9    22 GB    100% GPU     98304      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=98304
+llama-server --model /root/.ollama/models/blobs/sha256-1bce504dfecd84153666928a41d8a66706f0158d3a317bc5196b72819d7dc529 --port 44803 --host 127.0.0.1 --no-webui --offline -c 98304 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+  ollama ps: qwen38-27b:latest    a2a82f1561c9    22 GB    100% GPU     98304      llamacpp    4 minutes from now    
+CTX Ollama: max 98304
+  after ollama-cmax-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 21626 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-cmax-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 21628 MiB;]; containers [bench-ollama-q38 ]
+ollama qwen3.8:27b-mtp-q4_K_M ctx 131072: API up 67.208 s (api 3.912 s), first answer 67.212731300 s, load_duration 39.3 s; VRAM /usr/lib/ollama/llama-server, 22050 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    20 GB    30%/70% CPU/GPU    131072     llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=131072
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 37407 --host 127.0.0.1 --no-webui --offline -c 131072 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mo
+  ollama ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    20 GB    30%/70% CPU/GPU    131072     llamacpp    4 minutes from now    
+CTX Ollama MTP: 131072 does not fit
+ollama qwen3.8:27b-mtp-q4_K_M ctx 114688: API up 60.396 s (api 4.070 s), first answer 60.400366325 s, load_duration 32.38 s; VRAM /usr/lib/ollama/llama-server, 21756 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    20 GB    26%/74% CPU/GPU    114688     llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=114688
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 43169 --host 127.0.0.1 --no-webui --offline -c 114688 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mo
+  ollama ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    20 GB    26%/74% CPU/GPU    114688     llamacpp    4 minutes from now    
+CTX Ollama MTP: 114688 does not fit
+ollama qwen3.8:27b-mtp-q4_K_M ctx 98304: API up 59.945 s (api 3.924 s), first answer 59.949839397 s, load_duration 32.11 s; VRAM /usr/lib/ollama/llama-server, 22048 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    19 GB    19%/81% CPU/GPU    98304      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=98304
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 36849 --host 127.0.0.1 --no-webui --offline -c 98304 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mod
+  ollama ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    19 GB    19%/81% CPU/GPU    98304      llamacpp    4 minutes from now    
+CTX Ollama MTP: 98304 does not fit
+ollama qwen3.8:27b-mtp-q4_K_M ctx 81920: API up 59.763 s (api 4.068 s), first answer 59.766937102 s, load_duration 31.87 s; VRAM /usr/lib/ollama/llama-server, 22046 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    19 GB    13%/87% CPU/GPU    81920      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=81920
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 41347 --host 127.0.0.1 --no-webui --offline -c 81920 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mod
+  ollama ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    19 GB    13%/87% CPU/GPU    81920      llamacpp    4 minutes from now    
+CTX Ollama MTP: 81920 does not fit
+ollama qwen3.8:27b-mtp-q4_K_M ctx 65536: API up 59.221 s (api 3.855 s), first answer 59.224815311 s, load_duration 31.62 s; VRAM /usr/lib/ollama/llama-server, 21986 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    18 GB    6%/94% CPU/GPU    65536      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=65536
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 40607 --host 127.0.0.1 --no-webui --offline -c 65536 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mod
+  ollama ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    18 GB    6%/94% CPU/GPU    65536      llamacpp    4 minutes from now    
+CTX Ollama MTP: 65536 does not fit
+ollama qwen3.8:27b-mtp-q4_K_M ctx 49152: API up 58.967 s (api 3.931 s), first answer 58.971062945 s, load_duration 31.35 s; VRAM /usr/lib/ollama/llama-server, 21130 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    17 GB    100% GPU     49152      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=49152
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 35185 --host 127.0.0.1 --no-webui --offline -c 49152 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mod
+  ollama ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    17 GB    100% GPU     49152      llamacpp    4 minutes from now    
+ollama qwen3.8:27b-mtp-q4_K_M ctx 61440: API up 58.576 s (api 3.705 s), first answer 58.580740718 s, load_duration 31.12 s; VRAM /usr/lib/ollama/llama-server, 21940 MiB;; ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    17 GB    100% GPU     61440      llamacpp    4 minutes from now    ; env: -e OLLAMA_CONTEXT_LENGTH=61440
+llama-server --model /root/.ollama/models/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 37781 --host 127.0.0.1 --no-webui --offline -c 61440 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /root/.ollama/mod
+  ollama ps: qwen3.8:27b-mtp-q4_K_M    22130167c4c2    17 GB    100% GPU     61440      llamacpp    4 minutes from now    
+CTX Ollama MTP: max 61440
+  after ollama-mtp-cmax-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 21968 MiB;]; containers [bench-ollama-q38 ]
+  after ollama-mtp-cmax-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/usr/lib/ollama/llama-server, 21968 MiB;]; containers [bench-ollama-q38 ]
+lm studio c131072 gpu max: container+API 3.955 s, lms load 60.646016550 s; VRAM ; args: --gpu max -c 131072
+CTX LM Studio: 131072 does not fit
+lm studio c114688 gpu max: container+API 4.781 s, lms load 3.300691780 s; VRAM ; args: --gpu max -c 114688
+CTX LM Studio: 114688 does not fit
+lm studio c98304 gpu max: container+API 4.780 s, lms load 3.294811970 s; VRAM ; args: --gpu max -c 98304
+CTX LM Studio: 98304 does not fit
+lm studio c81920 gpu max: container+API 4.788 s, lms load 3.262822069 s; VRAM ; args: --gpu max -c 81920
+CTX LM Studio: 81920 does not fit
+lm studio c65536 gpu max: container+API 4.796 s, lms load 3.515526781 s; VRAM /root/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.79.0/llama-server, 22544 MiB;; args: --gpu max -c 65536
+qwen3.8-27b    qwen3.8-27b    IDLE      16.56 GB    65536      4           Local        
+lm studio c77824 gpu max: container+API 3.856 s, lms load 3.218090004 s; VRAM ; args: --gpu max -c 77824
+CTX LM Studio: 77824 does not fit
+lm studio c73728 gpu max: container+API 4.777 s, lms load 3.479747196 s; VRAM ; args: --gpu max -c 73728
+CTX LM Studio: 73728 does not fit
+lm studio c69632 gpu max: container+API 4.776 s, lms load 3.502861326 s; VRAM ; args: --gpu max -c 69632
+CTX LM Studio: 69632 does not fit
+lm studio c65536 gpu max: container+API 3.885 s, lms load 3.488751413 s; VRAM /root/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.79.0/llama-server, 22544 MiB;; args: --gpu max -c 65536
+qwen3.8-27b    qwen3.8-27b    IDLE      16.56 GB    65536      4           Local        
+CTX LM Studio: max 65536
+  after lms-cmax-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;/root/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.79.0/llama-server, 22616 MiB;]; containers [bench-lms-q38 ]
+  after lms-cmax-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;/root/.lmstudio/extensions/backends/llama.cpp-linux-x86_64-nvidia-cuda12-avx2-2.79.0/llama-server, 22618 MiB;]; containers [bench-lms-q38 ]
+ValueError: To serve at least one request with the model's max seq len (32768), (2.3 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM: 32768 does not fit
+ValueError: To serve at least one request with the model's max seq len (28672), (2.06 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM: 28672 does not fit
+ValueError: To serve at least one request with the model's max seq len (24576), (1.82 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM: 24576 does not fit
+ValueError: To serve at least one request with the model's max seq len (20480), (1.58 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM: 20480 does not fit
+ValueError: To serve at least one request with the model's max seq len (16384), (1.29 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM: 16384 does not fit
+ValueError: To serve at least one request with the model's max seq len (12288), (1.05 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM: 12288 does not fit
+ValueError: max_num_seqs (32) exceeds available Mamba cache blocks (21). Each decode sequence requires one Mamba cache block, so CUDA graph capture cannot proceed. Please lower max_num_seqs to at most 21 or increase gpu_memory_utilization.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM: 8192 does not fit
+CTX vLLM: nothing fits down to 8192
+CTX === context runs done 2026-11-21 00:20:24
+ValueError: Free memory on device cuda:0 (21.93/23.61 GiB) on startup is less than desired GPU memory utilization (0.93, 21.96 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX === vLLM max rerun start 2026-11-21 01:08:45; desktop VRAM 969 MiB (Slack closed)
+vllm max-model-len 32768: ready in 45.122759656 s; Model loading took 18.28 GiB GPU KV cache size: 44,373 tokens Maximum concurrency for 32,768 tokens per request: 1.35x ; VRAM VLLM::EngineCore, 22530 MiB;; args: --max-model-len 32768 --gpu-memory-utilization 0.93 --max-num-seqs 32 --max-cudagraph-capture-size 32
+CTX vLLM: max 32768
+  after vllm-cmax-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;VLLM::EngineCore, 22558 MiB;]; containers [bench-vllm ]
+  after vllm-cmax-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;]; containers [bench-vllm ]
+CTX === vLLM max rerun done 2026-11-21 01:14:21
+CTX === vLLM upper search start 2026-11-21 01:15:04; desktop VRAM 889 MiB
+ValueError: To serve at least one request with the model's max seq len (98304), (6.32 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM at 98304: does not fit; ValueError: To serve at least one request with the model's max seq len (98304), (6.32 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memo
+ValueError: To serve at least one request with the model's max seq len (45056), (3.06 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM at 45056: does not fit; ValueError: To serve at least one request with the model's max seq len (45056), (3.06 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memo
+ValueError: To serve at least one request with the model's max seq len (40960), (2.82 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM at 40960: does not fit; ValueError: To serve at least one request with the model's max seq len (40960), (2.82 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memo
+ValueError: To serve at least one request with the model's max seq len (36864), (2.58 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memory, the estimated maximum model length is 10976. Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+CTX vLLM at 36864: does not fit; ValueError: To serve at least one request with the model's max seq len (36864), (2.58 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memo
+vllm max-model-len 32768: ready in 40.231904161 s; Model loading took 18.28 GiB GPU KV cache size: 43,690 tokens Maximum concurrency for 32,768 tokens per request: 1.33x ; VRAM VLLM::EngineCore, 22480 MiB;; args: --max-model-len 32768 --gpu-memory-utilization 0.93 --max-num-seqs 32 --max-cudagraph-capture-size 32
+CTX vLLM 32768 repeat 1: fits; GPU KV cache size: 43,690 tokens
+vllm max-model-len 32768: ready in 40.210880996 s; Model loading took 18.28 GiB GPU KV cache size: 43,690 tokens Maximum concurrency for 32,768 tokens per request: 1.33x ; VRAM VLLM::EngineCore, 22480 MiB;; args: --max-model-len 32768 --gpu-memory-utilization 0.93 --max-num-seqs 32 --max-cudagraph-capture-size 32
+CTX vLLM 32768 repeat 2: fits; GPU KV cache size: 43,690 tokens
+CTX === vLLM upper search done 2026-11-21 01:25:25
+CTX === vLLM 32768 single rerun 2026-11-21 01:25:42; desktop VRAM 889 MiB
+vllm max-model-len 32768: ready in 41.284111593 s; Model loading took 18.28 GiB GPU KV cache size: 43,690 tokens Maximum concurrency for 32,768 tokens per request: 1.33x ; VRAM VLLM::EngineCore, 22480 MiB;; args: --max-model-len 32768 --gpu-memory-utilization 0.93 --max-num-seqs 32 --max-cudagraph-capture-size 32
+  after vllm-c32k-k1-short: GPU apps [/usr/bin/ptyxis, 63 MiB;VLLM::EngineCore, 22508 MiB;]; containers [bench-vllm ]
+  after vllm-c32k-k1-long: GPU apps [/usr/bin/ptyxis, 63 MiB;VLLM::EngineCore, 22978 MiB;]; containers [bench-vllm ]
+CTX === vLLM 32768 single rerun done 2026-11-21 01:32:01

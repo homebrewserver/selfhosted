@@ -1,0 +1,8 @@
+CTX === vLLM upper search start 2026-11-21 01:15:04; desktop VRAM 889 MiB
+CTX vLLM at 98304: does not fit; ValueError: To serve at least one request with the model's max seq len (98304), (6.32 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memo
+CTX vLLM at 45056: does not fit; ValueError: To serve at least one request with the model's max seq len (45056), (3.06 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memo
+CTX vLLM at 40960: does not fit; ValueError: To serve at least one request with the model's max seq len (40960), (2.82 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memo
+CTX vLLM at 36864: does not fit; ValueError: To serve at least one request with the model's max seq len (36864), (2.58 GiB KV cache is needed, which is larger than the available KV cache memory (0.97 GiB). Based on the available memo
+CTX vLLM 32768 repeat 1: fits; GPU KV cache size: 43,690 tokens
+CTX vLLM 32768 repeat 2: fits; GPU KV cache size: 43,690 tokens
+CTX === vLLM upper search done 2026-11-21 01:25:25

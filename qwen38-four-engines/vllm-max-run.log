@@ -1,0 +1,24 @@
+CTX === vLLM max rerun start 2026-11-21 01:08:45; desktop VRAM 969 MiB (Slack closed)
+CTX vLLM: max 32768
+{"label": "vllm-cmax-k1-short", "engine": "vllm", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 43.5, "tg_tps_med": 43.8, "ttft_ms_med": 106, "ttft_ms_max": 108, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+Exception in thread Thread-3 (one):
+Traceback (most recent call last):
+  File "/usr/lib64/python3.14/threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib64/python3.14/threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/homelab-tests/qwen38-four-engines/bench.py", line 63, in one
+    out.append({"ttft_s": first - t0, "tg_tps": (ntok - 1) / (last - first) if last > first else 0, "gen_tokens": ntok,
+                          ~~~~~~^~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
+Traceback (most recent call last):
+  File "~/homelab-tests/qwen38-four-engines/bench.py", line 88, in <module>
+    print(f"{a.label} round {r+1}: agg {rd['agg_tps']:.1f} tok/s, per-req tg {statistics.median(o['tg_tps'] for o in out):.1f}, "
+                                                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/statistics.py", line 343, in median
+    raise StatisticsError("no median for empty data")
+statistics.StatisticsError: no median for empty data
+vllm-cmax-k1-long round 2: agg 27.6 tok/s, per-req tg 42.9, ttft med 3340 ms max 3340 ms
+CTX === vLLM max rerun done 2026-11-21 01:14:21

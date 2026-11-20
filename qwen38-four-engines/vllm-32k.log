@@ -1,0 +1,4 @@
+CTX === vLLM 32768 single rerun 2026-11-21 01:25:42; desktop VRAM 889 MiB
+{"label": "vllm-c32k-k1-short", "engine": "vllm", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 43.0, "tg_tps_med": 43.3, "ttft_ms_med": 108, "ttft_ms_max": 109, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+{"label": "vllm-c32k-k1-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 27.3, "tg_tps_med": 42.4, "ttft_ms_med": 3358, "ttft_ms_max": 3361, "gen_tokens_med": 256, "prompt_tokens_med": 4122}
+CTX === vLLM 32768 single rerun done 2026-11-21 01:32:01

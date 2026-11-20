@@ -1,0 +1,70 @@
+CTX === context runs start 2026-11-20 22:36:09; desktop VRAM 1397 MiB
+CTX llama.cpp at 32768: fits
+{"label": "llama-c32k-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.9, "tg_tps_med": 43.7, "ttft_ms_med": 244, "ttft_ms_max": 245, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "llama-c32k-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 28.7, "tg_tps_med": 43.0, "ttft_ms_med": 2988, "ttft_ms_max": 2989, "gen_tokens_med": 256, "prompt_tokens_med": 4119}
+CTX llama.cpp MTP at 32768: fits
+{"label": "llama-mtp-c32k-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 68.9, "tg_tps_med": 71.1, "ttft_ms_med": 245, "ttft_ms_max": 258, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+{"label": "llama-mtp-c32k-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 40.7, "tg_tps_med": 79.7, "ttft_ms_med": 3090, "ttft_ms_max": 3094, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+CTX LM Studio at 32768: fits
+{"label": "lms-c32k-k1-short", "engine": "lms", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 63.5, "tg_tps_med": 65.6, "ttft_ms_med": 267, "ttft_ms_max": 273, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "lms-c32k-k1-long", "engine": "lms", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 36.1, "tg_tps_med": 76.9, "ttft_ms_med": 3774, "ttft_ms_max": 3783, "gen_tokens_med": 256, "prompt_tokens_med": 4122}
+CTX llama.cpp at 98304: fits
+{"label": "llama-c96k-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.9, "tg_tps_med": 43.7, "ttft_ms_med": 241, "ttft_ms_max": 242, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "llama-c96k-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 28.7, "tg_tps_med": 42.9, "ttft_ms_med": 2991, "ttft_ms_max": 3005, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+CTX llama.cpp MTP at 98304: does not fit
+CTX Ollama at 98304: fits
+{"label": "ollama-c96k-k1-short", "engine": "ollama", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.2, "tg_tps_med": 43.4, "ttft_ms_med": 371, "ttft_ms_max": 377, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "ollama-c96k-k1-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 27.8, "tg_tps_med": 42.7, "ttft_ms_med": 3227, "ttft_ms_max": 3236, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+CTX Ollama MTP at 98304: does not fit
+CTX LM Studio at 98304: does not fit
+CTX llama.cpp: 131072 does not fit
+CTX llama.cpp: 114688 does not fit
+CTX llama.cpp: 110592 does not fit
+CTX llama.cpp: max 106496
+{"label": "llama-cmax-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.9, "tg_tps_med": 43.7, "ttft_ms_med": 245, "ttft_ms_max": 247, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+{"label": "llama-cmax-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 28.6, "tg_tps_med": 42.9, "ttft_ms_med": 3001, "ttft_ms_max": 3009, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+CTX llama.cpp MTP: 131072 does not fit
+CTX llama.cpp MTP: 114688 does not fit
+CTX llama.cpp MTP: 98304 does not fit
+CTX llama.cpp MTP: 81920 does not fit
+CTX llama.cpp MTP: 77824 does not fit
+CTX llama.cpp MTP: 73728 does not fit
+CTX llama.cpp MTP: 69632 does not fit
+CTX llama.cpp MTP: max 65536
+{"label": "llama-mtp-cmax-k1-short", "engine": "llamacpp", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 68.2, "tg_tps_med": 70.3, "ttft_ms_med": 245, "ttft_ms_max": 248, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "llama-mtp-cmax-k1-long", "engine": "llamacpp", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 40.9, "tg_tps_med": 80.6, "ttft_ms_med": 3103, "ttft_ms_max": 3106, "gen_tokens_med": 256, "prompt_tokens_med": 4123}
+CTX Ollama: 131072 does not fit
+CTX Ollama: 114688 does not fit
+CTX Ollama: 110592 does not fit
+CTX Ollama: 106496 does not fit
+CTX Ollama: 102400 does not fit
+CTX Ollama: max 98304
+{"label": "ollama-cmax-k1-short", "engine": "ollama", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 42.2, "tg_tps_med": 43.4, "ttft_ms_med": 373, "ttft_ms_max": 381, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "ollama-cmax-k1-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 27.8, "tg_tps_med": 42.7, "ttft_ms_med": 3244, "ttft_ms_max": 3245, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+CTX Ollama MTP: 131072 does not fit
+CTX Ollama MTP: 114688 does not fit
+CTX Ollama MTP: 98304 does not fit
+CTX Ollama MTP: 81920 does not fit
+CTX Ollama MTP: 65536 does not fit
+CTX Ollama MTP: max 61440
+{"label": "ollama-mtp-cmax-k1-short", "engine": "ollama", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 55.2, "tg_tps_med": 57.6, "ttft_ms_med": 405, "ttft_ms_max": 412, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "ollama-mtp-cmax-k1-long", "engine": "ollama", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 33.9, "tg_tps_med": 64.4, "ttft_ms_med": 3599, "ttft_ms_max": 3613, "gen_tokens_med": 256, "prompt_tokens_med": 4121}
+CTX LM Studio: 131072 does not fit
+CTX LM Studio: 114688 does not fit
+CTX LM Studio: 98304 does not fit
+CTX LM Studio: 81920 does not fit
+CTX LM Studio: 77824 does not fit
+CTX LM Studio: 73728 does not fit
+CTX LM Studio: 69632 does not fit
+CTX LM Studio: max 65536
+{"label": "lms-cmax-k1-short", "engine": "lms", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 63.3, "tg_tps_med": 65.3, "ttft_ms_med": 268, "ttft_ms_max": 273, "gen_tokens_med": 512, "prompt_tokens_med": 72}
+{"label": "lms-cmax-k1-long", "engine": "lms", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 35.8, "tg_tps_med": 76.0, "ttft_ms_med": 3781, "ttft_ms_max": 3796, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+CTX vLLM: 32768 does not fit
+CTX vLLM: 28672 does not fit
+CTX vLLM: 24576 does not fit
+CTX vLLM: 20480 does not fit
+CTX vLLM: 16384 does not fit
+CTX vLLM: 12288 does not fit
+CTX vLLM: 8192 does not fit
+CTX vLLM: nothing fits down to 8192
+CTX === context runs done 2026-11-21 00:20:24

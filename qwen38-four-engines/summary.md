@@ -20,3 +20,25 @@ VRAM (server process): llama.cpp defaults 22,030 MiB; np32 22,238; LMS flags 16,
 Not run / failed: vLLM 32k context (KV max ~11.7k tokens); vLLM MTP (draft model OOM, 2.37 GiB more needed); llama.cpp MTP crash (common.cpp:1634) on slot reuse after the 32-request test. Details in setup-log.md.
 
 Ollama MTP download: draft acceptance 41% over the run (36,026 of 86,860 drafted tokens), mean accepted length 2.65; longest first-token wait at 32 requests 162.2 s.
+
+## One request at fixed contexts (20-21 Nov 2026, run-contexts.sh + run-vllm-*.sh)
+
+Each request gets the stated context; each server keeps its default number of requests at a time. tok/s short / long prompt, TTFT s short / long, GPU memory GiB when the server became ready (start.sh line in setup-log.md). Largest context searched in 16,384 steps, then 4,096.
+
+| Setup | Context | tok/s short | tok/s long | TTFT short | TTFT long | GPU GiB |
+|---|---|---|---|---|---|---|
+| llama.cpp (llama-c32k) | 32,768 | 43.7 | 43.0 | 0.24 | 2.99 | 17.5 |
+| llama.cpp MTP (llama-mtp-c32k) | 32,768 | 71.1 | 79.7 | 0.25 | 3.09 | 19.9 |
+| LM Studio, MTP on (lms-c32k) | 32,768 | 65.6 | 76.9 | 0.27 | 3.77 | 19.9 |
+| vLLM (vllm-c32k) | 32,768 | 43.3 | 42.4 | 0.11 | 3.36 | 22.0 |
+| llama.cpp (llama-c96k) | 98,304 | 43.7 | 42.9 | 0.24 | 2.99 | 21.5 |
+| Ollama (ollama-c96k) | 98,304 | 43.4 | 42.7 | 0.37 | 3.23 | 21.1 |
+| llama.cpp, largest (llama-cmax) | 106,496 | 43.7 | 42.9 | 0.25 | 3.00 | 22.1 |
+| llama.cpp MTP, largest (llama-mtp-cmax) | 65,536 | 70.3 | 80.6 | 0.25 | 3.10 | 22.0 |
+| Ollama, largest (ollama-cmax) | 98,304 | 43.4 | 42.7 | 0.37 | 3.24 | 21.1 |
+| Ollama MTP download, largest (ollama-mtp-cmax) | 61,440 | 57.6 | 64.4 | 0.41 | 3.60 | 21.4 |
+| LM Studio, largest (lms-cmax) | 65,536 | 65.3 | 76.0 | 0.27 | 3.78 | 22.0 |
+| vLLM, largest (vllm-c32k) | 32,768 | 43.3 | 42.4 | 0.11 | 3.36 | 22.0 |
+
+Ollama at 32k = its defaults (ollama-def, ollama-mtp above). Did not fit at 98,304: llama.cpp MTP, Ollama MTP download (19% on CPU), LM Studio, vLLM (6.32 GiB KV needed, 0.97 GiB available).
+vLLM: the first context search (ctx-run.log) failed even at 8,192 because Slack and VS Code held GPU memory (21.93 < 21.96 GiB free). Rerun with Slack closed: 32,768 starts (3 of 3 tries, 43,690-44,373 KV tokens), 36,864 does not. The first test's start at 32k had 11,760 KV tokens; cause of the difference not found. vllm-cmax has only the short prompt from a partly failed run (vllm-c32k-errors.log); use vllm-c32k.
