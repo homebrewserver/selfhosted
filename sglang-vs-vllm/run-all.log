@@ -1,0 +1,85 @@
+=== 9B run start 2026-11-21 23:50:35
+9B vllm defaults cold (empty compile cache): ready in 168.365604957 s; Model loading took 8.36 GiB GPU KV cache size: 315,807 tokens Maximum concurrency for 32,768 tokens per request: 9.64x ; VRAM VLLM::EngineCore, 20854 MiB;; args: --max-model-len 32768 --enable-prompt-tokens-details
+9B vllm defaults warm: ready in 77.716044360 s; Model loading took 8.36 GiB GPU KV cache size: 315,332 tokens Maximum concurrency for 32,768 tokens per request: 9.62x ; VRAM VLLM::EngineCore, 20834 MiB;; args: --max-model-len 32768 --enable-prompt-tokens-details
+  vllm idle power (10 samples): 24.10 24.40 24.42 23.83 23.56 24.21 24.58 23.94 23.77 24.29  W
+{"label": "vllm-k1-short", "engine": "vllm", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 113.0, "tg_tps_med": 114.7, "ttft_ms_med": 74, "ttft_ms_max": 83, "gen_tokens_med": 512, "prompt_tokens_med": 71}
+{"label": "vllm-k1-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 77.9, "tg_tps_med": 112.1, "ttft_ms_med": 1013, "ttft_ms_max": 1039, "gen_tokens_med": 256, "prompt_tokens_med": 4122}
+{"label": "vllm-k4-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 396.2, "tg_tps_med": 103.8, "ttft_ms_med": 123, "ttft_ms_max": 134, "gen_tokens_med": 256.0, "prompt_tokens_med": 72.0}
+{"label": "vllm-k8-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 766.0, "tg_tps_med": 102.7, "ttft_ms_med": 189, "ttft_ms_max": 219, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "vllm-k16-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 1264.3, "tg_tps_med": 88.4, "ttft_ms_med": 351, "ttft_ms_max": 366, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "vllm-k32-short", "engine": "vllm", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 1726.6, "tg_tps_med": 61.0, "ttft_ms_med": 557, "ttft_ms_max": 630, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "vllm-k8-long", "engine": "vllm", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 191.7, "tg_tps_med": 45.4, "ttft_ms_med": 4953, "ttft_ms_max": 7881, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+{"label": "vllm-prefix", "prompt_tokens": 4125, "cold_ttft_ms_med": 1029, "warm_ttft_ms_med": 125, "conc16_ttft_ms_med": 2047.5, "conc16_ttft_ms_max": 2702, "conc16_batch_ms_med": 3115}
+9B sglang defaults cold (empty cache): ready in 261.092135415 s; context_len=32768 KV Cache is allocated. dtype: torch.bfloat16, #tokens: 104503 max_running_requests=11 max_total_num_tokens=104503 mem usage=0.00 GB mem usage=0.06 GB mem usage=1.10 GB mem usage=8.43 GB ; VRAM python3, 302 MiB;sglang::scheduler, 16802 MiB;; args: --context-length 32768 --enable-cache-report
+9B sglang defaults warm: ready in 59.522500281 s; context_len=32768 KV Cache is allocated. dtype: torch.bfloat16, #tokens: 104501 max_running_requests=11 max_total_num_tokens=104501 mem usage=0.00 GB mem usage=0.06 GB mem usage=1.10 GB mem usage=8.43 GB ; VRAM python3, 302 MiB;sglang::scheduler, 16802 MiB;; args: --context-length 32768 --enable-cache-report
+  sglang idle power (10 samples): 24.36 24.35 24.52 24.07 23.40 23.59 24.02 23.38 23.07 23.56  W
+{"label": "sglang-k1-short", "engine": "sglang", "prompt": "short", "n": 512, "k": 1, "rounds": 5, "agg_tps_med": 119.3, "tg_tps_med": 121.1, "ttft_ms_med": 71, "ttft_ms_max": 85, "gen_tokens_med": 512, "prompt_tokens_med": 70}
+{"label": "sglang-k1-long", "engine": "sglang", "prompt": "long", "n": 256, "k": 1, "rounds": 5, "agg_tps_med": 81.7, "tg_tps_med": 118.4, "ttft_ms_med": 977, "ttft_ms_max": 997, "gen_tokens_med": 256, "prompt_tokens_med": 4120}
+{"label": "sglang-k4-short", "engine": "sglang", "prompt": "short", "n": 256, "k": 4, "rounds": 3, "agg_tps_med": 397.2, "tg_tps_med": 110.0, "ttft_ms_med": 241, "ttft_ms_max": 263, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "sglang-k8-short", "engine": "sglang", "prompt": "short", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 792.8, "tg_tps_med": 107.1, "ttft_ms_med": 201, "ttft_ms_max": 231, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.0}
+{"label": "sglang-k16-short", "engine": "sglang", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 782.9, "tg_tps_med": 98.5, "ttft_ms_med": 322, "ttft_ms_max": 3093, "gen_tokens_med": 256.0, "prompt_tokens_med": 70.5}
+{"label": "sglang-k32-short", "engine": "sglang", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 975.8, "tg_tps_med": 98.5, "ttft_ms_med": 3028, "ttft_ms_max": 5832, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "sglang-k8-long", "engine": "sglang", "prompt": "long", "n": 256, "k": 8, "rounds": 3, "agg_tps_med": 196.8, "tg_tps_med": 50.0, "ttft_ms_med": 5251, "ttft_ms_max": 7705, "gen_tokens_med": 256.0, "prompt_tokens_med": 4121.0}
+{"label": "sglang-prefix", "prompt_tokens": 4123, "cold_ttft_ms_med": 1009, "warm_ttft_ms_med": 32, "conc16_ttft_ms_med": 1121.5, "conc16_ttft_ms_max": 1532, "conc16_batch_ms_med": 1812}
+9B sglang mem 0.9 (matched to vllm): ready in 61.721213139 s; context_len=32768 KV Cache is allocated. dtype: torch.bfloat16, #tokens: 200303 max_running_requests=22 max_total_num_tokens=200303 mem usage=0.00 GB mem usage=0.09 GB mem usage=1.10 GB mem usage=8.43 GB ; VRAM python3, 302 MiB;sglang::scheduler, 22552 MiB;; args: --context-length 32768 --enable-cache-report --mem-fraction-static 0.9
+{"label": "sglang-mem09-k16-short", "engine": "sglang", "prompt": "short", "n": 256, "k": 16, "rounds": 3, "agg_tps_med": 1301.2, "tg_tps_med": 91.7, "ttft_ms_med": 363, "ttft_ms_max": 366, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+{"label": "sglang-mem09-k32-short", "engine": "sglang", "prompt": "short", "n": 256, "k": 32, "rounds": 3, "agg_tps_med": 1194.8, "tg_tps_med": 69.6, "ttft_ms_med": 441, "ttft_ms_max": 4294, "gen_tokens_med": 256.0, "prompt_tokens_med": 71.0}
+Traceback (most recent call last):
+  File "~/homelab-tests/sglang-vs-vllm/bench.py", line 77, in <module>
+    one(a, a.prompt, [])  # warm-up, not recorded
+    ~~~^^^^^^^^^^^^^^^^^
+  File "~/homelab-tests/sglang-vs-vllm/bench.py", line 52, in one
+    for line in urllib.request.urlopen(req, timeout=1800):
+                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 493, in open
+    response = meth(req, response)
+  File "/usr/lib64/python3.14/urllib/request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/usr/lib64/python3.14/urllib/request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.14/urllib/request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+Traceback (most recent call last):
+  File "~/homelab-tests/sglang-vs-vllm/prefix.py", line 45, in <module>
+    one(a, fresh(), QS[0], [], 0)  # warm-up
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/homelab-tests/sglang-vs-vllm/prefix.py", line 27, in one
+    for line in urllib.request.urlopen(req, timeout=1800):
+                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 487, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.14/urllib/request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.14/urllib/request.py", line 1362, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/urllib/request.py", line 1337, in do_open
+    r = h.getresponse()
+  File "/usr/lib64/python3.14/http/client.py", line 1478, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.14/http/client.py", line 343, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.14/http/client.py", line 304, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/socket.py", line 729, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+=== 9B run done 2026-11-22 00:26:28
